@@ -169,25 +169,40 @@
   are both orthonormal basis. We may now approximate a function
   <math|f\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>> by its projection
 
-  <\equation*>
-    P<rsub|m>f<around*|(|x|)>=<big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>c<rsub|m,k>\<phi\><rsub|m,k><around*|(|x|)>,
-  </equation*>
+  <\equation>
+    P<rsub|m>f<around*|(|x|)>=<big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>c<rsub|m,k>\<phi\><rsub|m,k><around*|(|x|)>,<label|expansion-pm>
+  </equation>
 
   we may also define projection of function <math|f> on subspace
   <math|W<rsub|m>> as <math|Q<rsub|m>> and it follows that
 
   <\equation>
-    P<rsub|m>=P<rsub|m-1>+Q<rsub|m-1>.
+    P<rsub|m>=P<rsub|m-1>+Q<rsub|m-1>.<label|pq-relationship>
   </equation>
 
   This implies that <math|Q<rsub|m>f> is represents the details that was lost
   from one level of approximation to a coarser level.
+
+  The multiresolution analysis defined in a functional way can be explained
+  as follows. If we have the expansion coefficients <math|c<rsub|m,k>> in
+  equation (<reference|expansion-pm>), then we can decomposes them into two
+  parts with equation (<reference|pq-relationship>):
+
+  <\enumerate-numeric>
+    <item>the expansion coefficients <math|c<rsub|m-1,k>> of the
+    approximation <math|P<rsub|m-1>f>,
+
+    <item>the expansion coefficients <math|d<rsub|m-1,k>> of the detail
+    component <math|Q<rsub|m-1>f.>
+  </enumerate-numeric>
 
   <subsection|Example: Haar Wavelet>
 
   <section|Construction of Wavelet System>
 
   This section is mainly according to <cite|williams1994introduction>.
+
+  <subsection|Quadrature Mirror Filters>
 
   In general, a scaling function <math|\<phi\><around*|(|x|)>> is solution to
   dilation equation (<reference|dilation>), and the constants
@@ -196,9 +211,90 @@
   coefficients, the scaling function can be deduced, and the corresponding
   wavelet transform is determined; if certain conditions are imposed on the
   scaling functions, the filter coefficients can be fully derived, and this
-  is the most important contribution of modern wavelet theory.
+  is the most important contribution of modern wavelet theory (along with
+  frame theory).
 
-  \ <part|Application of Wavelet Analysis in CFD>
+  One of the most important condition on scaling funtion is orthogonality:
+
+  <\equation*>
+    <big|int><rsub|-\<infty\>><rsup|\<infty\>>\<phi\><around*|(|x|)>\<phi\><around*|(|x+l|)>
+    \<mathd\>x=\<delta\><rsub|0,l><space|1em>l\<in\>\<bbb-Z\>,
+  </equation*>
+
+  so a wavelet being orthogonal to the scaling function can defined by:
+
+  <\equation*>
+    \<psi\><around*|(|x|)>=<big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>><around*|(|-1|)><rsup|k>a<rsub|N-1-k>\<phi\><around*|(|2x-k|)>
+  </equation*>
+
+  where <math|N> is an even integer<\footnote>
+    It will then be shown that the wavelet has support over
+    <math|<around*|[|0,N-1|]>>.
+  </footnote>. The orthogonality is verified as follows:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<around*|\<langle\>|\<phi\><around*|(|x|)>,\<psi\><around*|(|x|)>|\<rangle\>>>|<cell|=>|<cell|<big|int><rsub|-\<infty\>><rsup|\<infty\>><big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>a<rsub|k>\<phi\><around*|(|2x-k|)><big|sum><rsub|l=-\<infty\>><rsup|+\<infty\>><around*|(|-1|)><rsup|l>a<rsub|N-1-l>\<phi\><around*|(|2x-l|)>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2><big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>><around*|(|-1|)><rsup|k>a<rsub|N-1-k>a<rsub|k>>>|<row|<cell|>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  The set of coefficients <math|<around*|{|a<rsub|k>|}>> and
+  <math|<around*|{|<around*|(|-1|)><rsup|k>a<rsub|N-1-k>|}>> are said to form
+  a pair of <with|font-shape|italic|quadrature mirror filters>.
+
+  <subsection|Derivation of Filter Coefficients>
+
+  There are several properties that are essential to a useful basis for
+  functional analysis which lead to the corresponding conditions constraining
+  the filter coefficients. They are listed below:
+
+  <\enumerate-numeric>
+    <item>Normalization to unity, i.e.
+
+    <\equation*>
+      <big|int><rsub|-\<infty\>><rsup|+\<infty\>>\<phi\><around*|(|x|)>\<mathd\>x=1,
+    </equation*>
+
+    which leads to
+
+    <\equation>
+      <big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>a<rsub|k>=2.<label|normal-cond>
+    </equation>
+
+    <item>Orthogonality of scaling function, i.e.
+
+    <\equation*>
+      <big|int><rsub|-\<infty\>><rsup|+\<infty\>>\<phi\><around*|(|x|)>\<phi\><around*|(|x+l|)>\<mathd\>x=\<delta\><rsub|0,l><space|1em>l\<in\>\<bbb-Z\>,
+    </equation*>
+
+    which yields
+
+    <\equation>
+      <big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>a<rsub|k>a<rsub|k+2l>=2\<delta\><rsub|0,l><space|1em>l\<in\>\<bbb-Z\>.<label|orthogonal-cond>
+    </equation>
+
+    <item>Vanishing moment, i.e.
+
+    <\equation*>
+      <big|int><rsub|-\<infty\>><rsup|+\<infty\>>\<psi\><around*|(|x|)>x<rsup|l>\<mathd\>x=0<space|1em>l=0,1,2,\<ldots\>,p-1,
+    </equation*>
+
+    which yields (by Daubechies <cite|daubechies1992ten>)
+
+    <\equation>
+      <big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>><around*|(|-1|)><rsup|k>a<rsub|k>k<rsup|l>=0<space|1em>l=0,1,2,\<ldots\>,<frac*|N|2>-1<label|vanishing-cond>,
+    </equation>
+
+    and a more detailed discussion on equation (<reference|vanishing-cond>)
+    can be found in <cite|williams1994introduction>.
+  </enumerate-numeric>
+
+  The filter coefficients <math|<around*|{|a<rsub|k>|}><rsub|k=0,1,\<ldots\>,N-1>>
+  for an N coefficient system are uniquely defined by equation
+  (<reference|normal-cond>, <reference|orthogonal-cond>, and
+  <reference|vanishing-cond>).
+
+  <subsection|Construction of Scaling Function>
+
+  <part|Application of Wavelet Analysis in CFD>
 
   <\bibliography|bib|tm-plain|ReadingNotes.bib>
     <\bib-list|3>
@@ -287,7 +383,10 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|I|3>>
-    <associate|auto-10|<tuple|II|?>>
+    <associate|auto-10|<tuple|1.3.2|?>>
+    <associate|auto-11|<tuple|1.3.3|?>>
+    <associate|auto-12|<tuple|II|?>>
+    <associate|auto-13|<tuple|II|?>>
     <associate|auto-2|<tuple|1|5>>
     <associate|auto-3|<tuple|1.1|5>>
     <associate|auto-4|<tuple|1.2|5>>
@@ -295,15 +394,22 @@
     <associate|auto-6|<tuple|1.2.2|9>>
     <associate|auto-7|<tuple|1.2.3|?>>
     <associate|auto-8|<tuple|1.3|?>>
-    <associate|auto-9|<tuple|II|?>>
+    <associate|auto-9|<tuple|1.3.1|?>>
     <associate|bib-WangJizeng2001|<tuple|1|9>>
     <associate|bib-daubechies1992ten|<tuple|2|?>>
     <associate|bib-williams1994introduction|<tuple|3|?>>
     <associate|dilation|<tuple|1.2|?>>
+    <associate|expansion-pm|<tuple|1.7|?>>
     <associate|footnote-1.1|<tuple|1.1|?>>
     <associate|footnote-1.2|<tuple|1.2|?>>
+    <associate|footnote-1.3|<tuple|1.3|?>>
     <associate|footnr-1.1|<tuple|1.1|?>>
     <associate|footnr-1.2|<tuple|1.2|?>>
+    <associate|footnr-1.3|<tuple|1.3|?>>
+    <associate|normal-cond|<tuple|1.9|?>>
+    <associate|orthogonal-cond|<tuple|1.10|?>>
+    <associate|pq-relationship|<tuple|1.8|?>>
+    <associate|vanishing-cond|<tuple|1.11|?>>
   </collection>
 </references>
 
@@ -317,6 +423,8 @@
       williams1994introduction
 
       daubechies1992ten
+
+      williams1994introduction
     </associate>
     <\associate|toc>
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|I<space|2spc>Mathematical
@@ -347,13 +455,17 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-7>>
 
+      1.3<space|2spc>Construction of Wavelet System
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-8>
+
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II<space|2spc>Application
       of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-8><vspace|1fn>
+      <no-break><pageref|auto-9><vspace|1fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-9><vspace|0.5fn>
+      <no-break><pageref|auto-10><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
