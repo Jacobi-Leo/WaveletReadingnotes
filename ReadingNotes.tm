@@ -1,6 +1,6 @@
-<TeXmacs|1.99.5>
+<TeXmacs|1.99.4>
 
-<style|book>
+<style|<tuple|book|mathematica>>
 
 <\body>
   <\hide-preamble>
@@ -14,15 +14,15 @@
 
   <part|Mathematical Fundations of Wavelet Analysis>
 
-  <chapter|Basic Concepts of Wavelet Theory>
+  <chapter|Basic<rigid|> Concepts of Wavelet Theory>
 
   <section|A Functional Way of Introducing Wavelet Theory>
 
   <section|An Elementary Way of Introducing Wavelet Theory>
 
   This section is mainly according to <cite|WangJizeng2001|williams1994introduction>,
-  and provides another way of defining wavelet which is better for
-  programming, but lacks mathematical rigorousness.
+  and provides another way of defining (orthogonal) wavelet which is better
+  for programming, but lacks mathematical rigorousness.
 
   <subsection|Scaling Function>
 
@@ -198,9 +198,11 @@
 
   <subsection|Example: Haar Wavelet>
 
-  <section|Construction of Wavelet System>
+  <chapter|Construction and Properties of Wavelet System>
 
-  This section is mainly according to <cite|williams1994introduction>.
+  This chapter is mainly according to <cite|williams1994introduction>.
+
+  <section|The Construction of Daubechies Wavelet System>
 
   <subsection|Quadrature Mirror Filters>
 
@@ -294,6 +296,51 @@
 
   <subsection|Construction of Scaling Function>
 
+  In general, there is no closed-form solution of scaling function, and they
+  have to be attained recursively from the dilation equation
+  (<reference|dilation>) instead. In the case of quadrature mirror filter:
+
+  <\equation*>
+    \<phi\><around*|(|x|)>=a<rsub|<rsub|0>>\<phi\><around*|(|2x|)>+a<rsub|1>\<phi\><around*|(|2x-1|)>+a<rsub|2>\<phi\><around*|(|2x-2|)>+\<cdots\>+a<rsub|N-1>\<phi\><around*|(|2x-N+1|)>,
+  </equation*>
+
+  and additional with compact support constrain, we have
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<phi\><around*|(|0|)>>|<cell|=>|<cell|a<rsub|0>\<phi\><around*|(|0|)>>>|<row|<cell|\<phi\><around*|(|1|)>>|<cell|=>|<cell|a<rsub|0>\<phi\><around*|(|2|)>+a<rsub|1>\<phi\><around*|(|1|)>+a<rsub|2>\<phi\><around*|(|0|)>>>|<row|<cell|\<phi\><around*|(|2|)>>|<cell|=>|<cell|a<rsub|0>\<phi\><around*|(|4|)>+a<rsub|1>\<phi\><around*|(|3|)>+a<rsub|2>\<phi\><around*|(|2|)>+a<rsub|3>\<phi\><around*|(|1|)>+a<rsub|4>\<phi\><around*|(|0|)>>>|<row|<cell|>|<cell|\<vdots\>>|<cell|>>|<row|<cell|\<phi\><around*|(|N-2|)>>|<cell|=>|<cell|a<rsub|N-3>\<phi\><around*|(|N-1|)>+a<rsub|N-2>\<phi\><around*|(|N-2|)>+a<rsub|N-1>\<phi\><around*|(|N-3|)>>>|<row|<cell|\<phi\><around*|(|N-1|)>>|<cell|=>|<cell|a<rsub|N-1>\<phi\><around*|(|N-1|)>.>>>>
+  </eqnarray*>
+
+  or
+
+  <\equation*>
+    M \<Phi\>=\<Phi\>
+  </equation*>
+
+  This linear equation system is actually finding the eigenvector of matrix
+  <math|M> corresponding to the eigenvalue <math|1>, so the normalizing
+  condition is necessary:
+
+  <\equation*>
+    <big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>\<phi\><around*|(|i|)>=1<space|1em>i\<in\>\<bbb-Z\>.
+  </equation*>
+
+  \;
+
+  The above process gives the scaling function on integer points, and the
+  scaling function on all real points can be calculated by bisection method:
+
+  <\equation*>
+    \<phi\><around*|(|<frac|x|2>|)>=<big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>a<rsub|k>\<phi\><around*|(|x-k|)>.
+  </equation*>
+
+  <subsection|Example: The Daubechies 4 Coefficient Wavelet System>
+
+  <section|Classification of Wavelet Bases>
+
+  <section|Mallat Transform>
+
+  \;
+
   <part|Application of Wavelet Analysis in CFD>
 
   <\bibliography|bib|tm-plain|ReadingNotes.bib>
@@ -316,6 +363,12 @@
 
   \ 
 </body>
+
+<\initial>
+  <\collection>
+    <associate|info-flag|detailed>
+  </collection>
+</initial>
 
 <\attachments>
   <\collection>
@@ -383,18 +436,22 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|I|3>>
-    <associate|auto-10|<tuple|1.3.2|?>>
-    <associate|auto-11|<tuple|1.3.3|?>>
-    <associate|auto-12|<tuple|II|?>>
-    <associate|auto-13|<tuple|II|?>>
+    <associate|auto-10|<tuple|2.1.1|?>>
+    <associate|auto-11|<tuple|2.1.2|?>>
+    <associate|auto-12|<tuple|2.1.3|?>>
+    <associate|auto-13|<tuple|2.1.4|?>>
+    <associate|auto-14|<tuple|2.2|?>>
+    <associate|auto-15|<tuple|2.3|?>>
+    <associate|auto-16|<tuple|II|?>>
+    <associate|auto-17|<tuple|II|?>>
     <associate|auto-2|<tuple|1|5>>
     <associate|auto-3|<tuple|1.1|5>>
     <associate|auto-4|<tuple|1.2|5>>
     <associate|auto-5|<tuple|1.2.1|7>>
     <associate|auto-6|<tuple|1.2.2|9>>
     <associate|auto-7|<tuple|1.2.3|?>>
-    <associate|auto-8|<tuple|1.3|?>>
-    <associate|auto-9|<tuple|1.3.1|?>>
+    <associate|auto-8|<tuple|2|?>>
+    <associate|auto-9|<tuple|2.1|?>>
     <associate|bib-WangJizeng2001|<tuple|1|9>>
     <associate|bib-daubechies1992ten|<tuple|2|?>>
     <associate|bib-williams1994introduction|<tuple|3|?>>
@@ -403,13 +460,15 @@
     <associate|footnote-1.1|<tuple|1.1|?>>
     <associate|footnote-1.2|<tuple|1.2|?>>
     <associate|footnote-1.3|<tuple|1.3|?>>
+    <associate|footnote-2.1|<tuple|2.1|?>>
     <associate|footnr-1.1|<tuple|1.1|?>>
     <associate|footnr-1.2|<tuple|1.2|?>>
     <associate|footnr-1.3|<tuple|1.3|?>>
-    <associate|normal-cond|<tuple|1.9|?>>
-    <associate|orthogonal-cond|<tuple|1.10|?>>
+    <associate|footnr-2.1|<tuple|2.1|?>>
+    <associate|normal-cond|<tuple|2.1|?>>
+    <associate|orthogonal-cond|<tuple|2.2|?>>
     <associate|pq-relationship|<tuple|1.8|?>>
-    <associate|vanishing-cond|<tuple|1.11|?>>
+    <associate|vanishing-cond|<tuple|2.3|?>>
   </collection>
 </references>
 
@@ -425,13 +484,17 @@
       daubechies1992ten
 
       williams1994introduction
+
+      daubechies1992ten
+
+      williams1994introduction
     </associate>
     <\associate|toc>
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|I<space|2spc>Mathematical
       Fundations of Wavelet Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|1fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Basic
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Basic<rigid|>
       Concepts of Wavelet Theory> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
@@ -455,17 +518,37 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-7>>
 
-      1.3<space|2spc>Construction of Wavelet System
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Construction
+      and Properties of Wavelet System> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-8><vspace|0.5fn>
+
+      2.1<space|2spc>The Construction of Daubechies Wavelet System
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-8>
+      <no-break><pageref|auto-9>
+
+      <with|par-left|<quote|1tab>|2.1.1<space|2spc>Quadrature Mirror Filters
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-10>>
+
+      <with|par-left|<quote|1tab>|2.1.2<space|2spc>Derivation of Filter
+      Coefficients <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-11>>
+
+      <with|par-left|<quote|1tab>|2.1.3<space|2spc>Construction of Scaling
+      Function <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-12>>
+
+      <with|par-left|<quote|1tab>|2.1.4<space|2spc>Example: The Daubechies 4
+      Coefficient Wavelet System <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-13>>
 
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II<space|2spc>Application
       of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-9><vspace|1fn>
+      <no-break><pageref|auto-14><vspace|1fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-10><vspace|0.5fn>
+      <no-break><pageref|auto-15><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
