@@ -1,4 +1,4 @@
-<TeXmacs|1.99.4>
+<TeXmacs|1.99.5>
 
 <style|<tuple|book|mathematica>>
 
@@ -33,8 +33,8 @@
   data, function or operator is described mathematically with multiresolution
   of a functional space defined below.
 
-  In order to develop a multilevel representation of a function of a function
-  in <math|L<rsup|2 ><around*|(|\<bbb-R\>|)>>, we seek a squence of embedded
+  In order to develop a multilevel representation of a function in
+  <math|L<rsup|2 ><around*|(|\<bbb-R\>|)>>, we seek a squence of embedded
   subspaces <math|V<rsub|i>> such that
 
   <\equation>
@@ -304,7 +304,8 @@
     \<phi\><around*|(|x|)>=a<rsub|<rsub|0>>\<phi\><around*|(|2x|)>+a<rsub|1>\<phi\><around*|(|2x-1|)>+a<rsub|2>\<phi\><around*|(|2x-2|)>+\<cdots\>+a<rsub|N-1>\<phi\><around*|(|2x-N+1|)>,
   </equation*>
 
-  and additional with compact support constrain, we have
+  and it can be proved that<cite|williams1994introduction> all integer points
+  outside <math|<around*|[|0,N-1|]>> have zero value, we have
 
   <\eqnarray*>
     <tformat|<table|<row|<cell|\<phi\><around*|(|0|)>>|<cell|=>|<cell|a<rsub|0>\<phi\><around*|(|0|)>>>|<row|<cell|\<phi\><around*|(|1|)>>|<cell|=>|<cell|a<rsub|0>\<phi\><around*|(|2|)>+a<rsub|1>\<phi\><around*|(|1|)>+a<rsub|2>\<phi\><around*|(|0|)>>>|<row|<cell|\<phi\><around*|(|2|)>>|<cell|=>|<cell|a<rsub|0>\<phi\><around*|(|4|)>+a<rsub|1>\<phi\><around*|(|3|)>+a<rsub|2>\<phi\><around*|(|2|)>+a<rsub|3>\<phi\><around*|(|1|)>+a<rsub|4>\<phi\><around*|(|0|)>>>|<row|<cell|>|<cell|\<vdots\>>|<cell|>>|<row|<cell|\<phi\><around*|(|N-2|)>>|<cell|=>|<cell|a<rsub|N-3>\<phi\><around*|(|N-1|)>+a<rsub|N-2>\<phi\><around*|(|N-2|)>+a<rsub|N-1>\<phi\><around*|(|N-3|)>>>|<row|<cell|\<phi\><around*|(|N-1|)>>|<cell|=>|<cell|a<rsub|N-1>\<phi\><around*|(|N-1|)>.>>>>
@@ -335,11 +336,51 @@
 
   <subsection|Example: The Daubechies 4 Coefficient Wavelet System>
 
+  Here we demonstrate the construction of the so called D4 Wavelet. According
+  to equation (<reference|normal-cond>, <reference|orthogonal-cond>,
+  <reference|vanishing-cond>), we have
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|a<rsub|0>+a<rsub|1>+a<rsub|2>+a<rsub|3>>|<cell|=>|<cell|2>>|<row|<cell|a<rsub|0><rsup|2>+a<rsub|1><rsup|2>+a<rsub|2><rsup|2>+a<rsub|3><rsup|2>>|<cell|=>|<cell|2>>|<row|<cell|a<rsub|0>-a<rsub|1>+a<rsub|2>-a<rsub|3>>|<cell|=>|<cell|0>>|<row|<cell|-a<rsub|1>+2a<rsub|2>-3a<rsub|3>>|<cell|=>|<cell|0>>>>
+  </eqnarray*>
+
+  One set of solution is\ 
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|a<rsub|0>>|<cell|=>|<cell|<frac|1+<sqrt|3>|4>>>|<row|<cell|a<rsub|1>>|<cell|=>|<cell|<frac|3+<sqrt|3>|4>>>|<row|<cell|a<rsub|2>>|<cell|=>|<cell|<frac|3-<sqrt|3>|4>>>|<row|<cell|a<rsub|3>>|<cell|=>|<cell|<frac|1-<sqrt|3>|4>>>>>
+  </eqnarray*>
+
+  and the other set of solution is the antithesis of this set leading to
+  <math|\<phi\><around*|(|-x|)>> instead of <math|\<phi\><around*|(|x|)>>.
+
+  The values of the scaling function on integer points are given by
+
+  <\equation*>
+    <bmatrix|<tformat|<table|<row|<cell|a<rsub|0>-1>|<cell|0>|<cell|0>|<cell|0>>|<row|<cell|a<rsub|2>>|<cell|a<rsub|1>-1>|<cell|a<rsub|0>>|<cell|0>>|<row|<cell|0>|<cell|a<rsub|3>>|<cell|a<rsub|2>-1>|<cell|a<rsub|1>>>|<row|<cell|0>|<cell|0>|<cell|0>|<cell|a<rsub|3>-1>>>>><bmatrix|<tformat|<table|<row|<cell|\<phi\><around*|(|0|)>>>|<row|<cell|\<phi\><around*|(|1|)>>>|<row|<cell|\<phi\><around*|(|2|)>>>|<row|<cell|\<phi\><around*|(|3|)>>>>>>=<bmatrix|<tformat|<table|<row|<cell|0>>|<row|<cell|0>>|<row|<cell|0>>|<row|<cell|0>>>>>
+  </equation*>
+
+  and solved as:
+
+  <\equation*>
+    \<phi\><around*|(|0|)>=0<space|1em>\<phi\><around*|(|1|)>=<frac|1+<sqrt|3>|2><space|1em>\<phi\><around*|(|2|)>=<frac|1-<sqrt|3>|2><space|1em>\<phi\><around*|(|3|)>=0.
+  </equation*>
+
+  Additionally we have the half integers:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<phi\><around*|(|<frac|1|2>|)>>|<cell|=>|<cell|a<rsub|0>\<phi\><around*|(|1|)>=<frac|2+<sqrt|3>|4>>>|<row|<cell|\<phi\><around*|(|<frac|3|2>|)>>|<cell|=>|<cell|a<rsub|1>\<phi\><around*|(|2|)>+a<rsub|2>\<phi\><around*|(|1|)>=0>>|<row|<cell|\<phi\><around*|(|<frac|5|2>|)>>|<cell|=>|<cell|a<rsub|3>\<phi\><around*|(|2|)>=<frac|2-<sqrt|3>|4>.>>>>
+  </eqnarray*>
+
+  Any real number point on <math|<around*|[|0,3|]>> can be calculated
+  similarly, and it can be verified easily that the scaling function always
+  has null value outside <math|<around*|[|0,3|]>>, which means it has compact
+  support.
+
   <section|Classification of Wavelet Bases>
 
   <section|Mallat Transform>
 
-  \;
+  <chapter|Wavelet Theory in Numerical Analysis>
 
   <part|Application of Wavelet Analysis in CFD>
 
@@ -436,39 +477,38 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|I|3>>
-    <associate|auto-10|<tuple|2.1.1|?>>
-    <associate|auto-11|<tuple|2.1.2|?>>
-    <associate|auto-12|<tuple|2.1.3|?>>
-    <associate|auto-13|<tuple|2.1.4|?>>
-    <associate|auto-14|<tuple|2.2|?>>
-    <associate|auto-15|<tuple|2.3|?>>
-    <associate|auto-16|<tuple|II|?>>
-    <associate|auto-17|<tuple|II|?>>
+    <associate|auto-10|<tuple|2.1.1|7>>
+    <associate|auto-11|<tuple|2.1.2|7>>
+    <associate|auto-12|<tuple|2.1.3|8>>
+    <associate|auto-13|<tuple|2.1.4|8>>
+    <associate|auto-14|<tuple|2.2|9>>
+    <associate|auto-15|<tuple|2.3|9>>
+    <associate|auto-16|<tuple|3|11>>
+    <associate|auto-17|<tuple|II|13>>
+    <associate|auto-18|<tuple|II|15>>
     <associate|auto-2|<tuple|1|5>>
     <associate|auto-3|<tuple|1.1|5>>
     <associate|auto-4|<tuple|1.2|5>>
-    <associate|auto-5|<tuple|1.2.1|7>>
-    <associate|auto-6|<tuple|1.2.2|9>>
-    <associate|auto-7|<tuple|1.2.3|?>>
-    <associate|auto-8|<tuple|2|?>>
-    <associate|auto-9|<tuple|2.1|?>>
-    <associate|bib-WangJizeng2001|<tuple|1|9>>
-    <associate|bib-daubechies1992ten|<tuple|2|?>>
-    <associate|bib-williams1994introduction|<tuple|3|?>>
-    <associate|dilation|<tuple|1.2|?>>
-    <associate|expansion-pm|<tuple|1.7|?>>
-    <associate|footnote-1.1|<tuple|1.1|?>>
-    <associate|footnote-1.2|<tuple|1.2|?>>
-    <associate|footnote-1.3|<tuple|1.3|?>>
-    <associate|footnote-2.1|<tuple|2.1|?>>
-    <associate|footnr-1.1|<tuple|1.1|?>>
-    <associate|footnr-1.2|<tuple|1.2|?>>
-    <associate|footnr-1.3|<tuple|1.3|?>>
-    <associate|footnr-2.1|<tuple|2.1|?>>
-    <associate|normal-cond|<tuple|2.1|?>>
-    <associate|orthogonal-cond|<tuple|2.2|?>>
-    <associate|pq-relationship|<tuple|1.8|?>>
-    <associate|vanishing-cond|<tuple|2.3|?>>
+    <associate|auto-5|<tuple|1.2.1|5>>
+    <associate|auto-6|<tuple|1.2.2|6>>
+    <associate|auto-7|<tuple|1.2.3|6>>
+    <associate|auto-8|<tuple|2|7>>
+    <associate|auto-9|<tuple|2.1|7>>
+    <associate|bib-WangJizeng2001|<tuple|1|15>>
+    <associate|bib-daubechies1992ten|<tuple|2|15>>
+    <associate|bib-williams1994introduction|<tuple|3|15>>
+    <associate|dilation|<tuple|1.2|6>>
+    <associate|expansion-pm|<tuple|1.7|6>>
+    <associate|footnote-1.1|<tuple|1.1|5>>
+    <associate|footnote-1.2|<tuple|1.2|6>>
+    <associate|footnote-2.1|<tuple|2.1|7>>
+    <associate|footnr-1.1|<tuple|1.1|5>>
+    <associate|footnr-1.2|<tuple|1.2|6>>
+    <associate|footnr-2.1|<tuple|2.1|7>>
+    <associate|normal-cond|<tuple|2.1|7>>
+    <associate|orthogonal-cond|<tuple|2.2|8>>
+    <associate|pq-relationship|<tuple|1.8|6>>
+    <associate|vanishing-cond|<tuple|2.3|8>>
   </collection>
 </references>
 
@@ -486,6 +526,8 @@
       williams1994introduction
 
       daubechies1992ten
+
+      williams1994introduction
 
       williams1994introduction
     </associate>
@@ -542,13 +584,24 @@
       Coefficient Wavelet System <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-13>>
 
+      2.2<space|2spc>Classification of Wavelet Bases
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-14>
+
+      2.3<space|2spc>Mallat Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-15>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Wavelet
+      Theory in Numerical Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-16><vspace|0.5fn>
+
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II<space|2spc>Application
       of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-14><vspace|1fn>
+      <no-break><pageref|auto-17><vspace|1fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-15><vspace|0.5fn>
+      <no-break><pageref|auto-18><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
