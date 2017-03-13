@@ -16,7 +16,224 @@
 
   <chapter|Basic<rigid|> Concepts of Wavelet Theory>
 
-  <section|A Functional Way of Introducing Wavelet Theory>
+  <section|An Abstract Way of Introducing Wavelet Theory>
+
+  <subsection|Wavelet>
+
+  In general, the Hilbert space has the property described in the following
+  theorem<cite|christensen2010functions>.
+
+  <\theorem>
+    <dueto|Existence of orthonormal bases>Every separable Hilbert space
+    <name|<samp|<verbatim|>>><math|<with|math-font|cal|H>> has an orthonormal
+    basis.
+  </theorem>
+
+  Wavelet provides a way of constructing orthonormal bases in
+  <math|L<rsup|2><around*|(|\<bbb-R\>|)>> with a spcial structure: all of
+  them will be scaled and translated version of a fixed function. The
+  character that distinguishes bases with wavelet structure from other
+  orthonormal bases in <math|L<rsup|2><around*|(|\<bbb-R\>|)>> is that the
+  relevant function can be approximated well by finite partial sums, and even
+  with just a few nonzero coefficients.
+
+  <\definition>
+    <dueto|Wavelet>Let <math|\<psi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>>.
+
+    <\enumerate-roman>
+      <item>For <math|j,k\<in\>\<bbb-Z\>>, define the function
+      <math|\<psi\><rsub|j,k>> by
+
+      <\equation*>
+        \<psi\><rsub|j,k>\<assign\>2<rsup|j/2>\<psi\><around*|(|2<rsup|j>x-k|)><space|1em>x\<in\>\<bbb-R\>.
+      </equation*>
+
+      <item>The function <math|\<psi\>> is called a wavelet if the functions
+      <math|<around*|{|\<psi\><rsub|j,k>|}><rsub|j,k\<in\>\<bbb-Z\>>> form an
+      orthonormal basis for <math|L<rsup|2><around*|(|\<bbb-R\>|)>>.
+    </enumerate-roman>
+  </definition>
+
+  In terms of the translation operator <math|T<rsub|k>> and the dilation
+  operator <math|D>, we have
+
+  <\equation*>
+    \<psi\><rsub|j,k>=D<rsup|j>T<rsub|k>\<psi\><space|1em>j,k\<in\>\<bbb-Z\>.
+  </equation*>
+
+  \;
+
+  The systematical theory of constructing wavelet began in middle 1980s, but
+  the first wavelet is constructed much earlier and it is proved by Haar in
+  1910 that the following function consitutes an example of wavelet.
+
+  <\example>
+    <dueto|Haar Function>The <with|font-shape|italic|Haar function> is
+    defined by\ 
+
+    <\equation*>
+      \<psi\><around*|(|x|)>=<around*|{|<tabular*|<tformat|<twith|table-halign|l>|<cwith|2|2|2|2|cell-halign|l>|<cwith|3|3|2|2|cell-halign|l>|<cwith|1|1|2|2|cell-halign|l>|<table|<row|<cell|1>|<cell|<text|if><space|1em>0\<leqslant\>x\<less\>1/2>>|<row|<cell|-1>|<cell|<text|if><space|1em>1/2\<leqslant\>x\<less\>1>>|<row|<cell|0>|<cell|<text|otherwise.>>>>>>|\<nobracket\>>
+    </equation*>
+  </example>
+
+  It is very complicated to verify that Haar function is wavelet, and it is
+  mentioned here just to point out the existence of wavelet.
+
+  <subsection|Multiresolution Analysis>
+
+  Multiresolution analysis is a general tool to construct wavelet orthonormal
+  bases. A multiresolution analysis consists of a collection of conditions on
+  certain subspaces of <math|L<rsup|2><around*|(|\<bbb-R\>|)>>, and an
+  associated function<math|\<phi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>>.
+
+  <\definition>
+    <dueto|Multiresolution Analysis><label|def:multiresolutionAnalysis>A
+    multiresolution analysis for <math|L<rsup|2><around*|(|\<bbb-R\>|)>>
+    consists of a squence of closed subspaces
+    <math|<around*|{|V<rsub|i>|}><rsub|i\<in\>\<bbb-Z\>>> of
+    <math|L<rsup|2><around*|(|\<bbb-R\>|)>> and a function
+    <math|\<phi\>\<in\>V<rsub|0>>, such that the following conditions hold:
+
+    <\enumerate-roman>
+      <item>The space <math|V<rsub|j>> are nested, i.e.,
+
+      <\equation*>
+        \<cdots\>\<subset\>V<rsub|-1>\<subset\>V<rsub|0>\<subset\>V<rsub|1>\<subset\>\<cdots\>.
+      </equation*>
+
+      <item><math|<wide|<big|cup><rsub|j\<in\>\<bbb-Z\>>V<rsub|j>|\<bar\>>=L<rsup|2><around*|(|\<bbb-R\>|)>>
+      and <math|<big|cap><rsub|j\<in\>\<bbb-Z\>>V<rsub|j>=<around*|{|0|}>.>
+
+      <item><math|\<forall\>j\<in\>\<bbb-Z\>>,
+      <math|V<rsub|j+1>=D<around*|(|V<rsub|j>|)>>.
+
+      <item><math|\<forall\>k\<in\>\<bbb-Z\>>,
+      <math|f\<in\>V<rsub|0>\<Rightarrow\>T<rsub|k>f\<in\>V<rsub|0>>.
+
+      <item><math|<around*|{|T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>> is
+      an orthonormal basis for <math|V<rsub|0.>>
+    </enumerate-roman>
+  </definition>
+
+  A closer look at the condition the condition in Definition
+  <reference|def:multiresolutionAnalysis> reveals that the choice of the
+  function <math|\<phi\>> in a multiresolution analysis acturally determines
+  the space <math|V<rsub|j>> uniquely:
+
+  <\lemma>
+    <dueto|The Space <math|V<rsub|j>>><label|lem:spaceVj>Assume that the
+    conditions (iii) and (iv) in Definition
+    <reference|def:multiresolutionAnalysis> are satisfied. Then the following
+    hold:
+
+    <\enumerate-roman>
+      <item><math|V<rsub|j>=D<rsup|j><around*|(|V<rsub|0>|)>> for all
+      <math|j\<in\>\<bbb-Z\>>.
+
+      <item><math|V<rsub|j>=<wide|span<around*|{|D<rsup|j>T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>|\<bar\>>>
+      for all <math|j\<in\>\<bbb-Z\>.>
+    </enumerate-roman>
+  </lemma>
+
+  Lemma <reference|lem:spaceVj>(ii) shows that the space <math|V<rsub|j>> in
+  a multiresolution analysis are uniquely determined by the function
+  <math|\<phi\>>, so we say that the function <math|\<phi\>>
+  <with|font-shape|italic|generates the multiresolution analysis>. Later in
+  this Chapter, it will shown that only very special function <math|\<phi\> >
+  can generate multiresolution analysis.
+
+  <\example>
+    <dueto|Haar Multiresolution Analysis>We can define a multiresolution
+    analysis by
+
+    <\equation*>
+      <around*|{|<tabular|<tformat|<table|<row|<cell|\<phi\>>|<cell|\<assign\>>|<cell|\<chi\><rsub|<around*|[|0,1|)>>;>>|<row|<cell|V<rsub|j>>|<cell|\<assign\>>|<cell|<around*|{|f\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>\<of\>f
+      is constant on <around*|[|2<rsup|-j>k,2<rsup|-j><around*|(|k+1|)>|)>,\<forall\>k\<in\>\<bbb-Z\>|}>.>>>>>|\<nobracket\>>
+    </equation*>
+
+    Note that the Haar wavelet can be written as
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<psi\><around*|(|x|)>>|<cell|=>|<cell|\<chi\><rsub|<around*|[|0,1/2|)>><around*|(|x|)>-\<chi\><rsub|<around*|[|1/2,1|)>><around*|(|x|)>>>|<row|<cell|>|<cell|=>|<cell|\<chi\><rsub|<around*|[|0,1|)>><around*|(|2x|)>-\<chi\><rsub|<around*|[|0,1|)>><around*|(|2x-1|)>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|<sqrt|2>><around*|(|D\<chi\><rsub|<around*|[|0,1|)>><around*|(|x|)>-D
+      T<rsub|1>\<chi\><rsub|<around*|[|0,1|)>><around*|(|x|)>|)>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|<sqrt|2>><around*|(|D\<phi\><around*|(|x|)>-D
+      T<rsub|1>\<phi\><around*|(|x|)>|)>>>>>
+    </eqnarray*>
+  </example>
+
+  In order to construct an orthonormal basis for
+  <math|L<rsup|2><around*|(|\<bbb-R\>|)>> with multiresolution analysis, we
+  need to consider a class of vector space associated with
+  {<math|V<rsub|j><around*|}|<rsub|j\<in\>\<bbb-Z\>>|\<nobracket\>>>:
+
+  <\axiom>
+    <dueto|The Space <math|W<rsub|j>>>Assume that <math|V<rsub|j>> is a
+    sequence of closed subspace of <math|L<rsup|2><around*|(|\<bbb-R\>|)>>
+    and that the condition (i) in Definition
+    <reference|def:multiresolutionAnalysis> is satisfied. For any
+    <math|j\<in\>\<bbb-Z\>>, let <math|W<rsub|j>> denote the orthogonal
+    complement of <math|V<rsub|j>> with respect to <math|V<rsub|j+1>>, i.e.,
+
+    <\equation*>
+      W<rsub|j>\<assign\><around*|{|f\<in\>V<rsub|j+1><mid|\|><around*|\<langle\>|f,g|\<rangle\>>=0,\<forall\>g\<in\>V<rsub|j>|}>.
+    </equation*>
+
+    We denote the orthogonal projection of
+    <math|L<rsup|2><around*|(|\<bbb-R\>|)>> onto <math|W<rsub|j>> by
+    <math|Q<rsub|j>>.
+  </axiom>
+
+  It turns out that the space <math|W<rsub|0>> plays a very special role in
+  wavelet analysis. In fact, the next result shows that in order to obtain an
+  orthonormal basis <math|<around*|{|D<rsup|j>T<rsub|k>\<psi\>|}><rsub|j,k\<in\>\<bbb-Z\>>>
+  for <math|L<rsup|2><around*|(|\<bbb-R\>|)>>, it is enough to find a
+  function <math|\<psi\>\<in\>W<rsub|0>> such that
+  <math|<around*|{|\<psi\><around*|(|\<cdot\>-k|)>|}><rsub|k\<in\>\<bbb-Z\>>>
+  is an orthonormal basis for <math|W<rsub|0.>>
+
+  <\proposition>
+    Assume that the function <math|\<phi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>>
+    generates a multiresolution analysis. Let
+    <math|\<psi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>> and suppose that
+    <math|<around*|{|T<rsub|k>\<psi\>|}><rsub|k\<in\>\<bbb-Z\>>> form an
+    orthonormal basis for <math|W<rsub|0>>. Then the following holds:
+
+    <\enumerate-roman>
+      <item>For each <math|j\<in\>\<bbb-Z\>>, the functions
+      <math|<around*|{|D<rsup|j>T<rsub|k>\<psi\>|}><rsub|k\<in\>\<bbb-Z\>>>
+      form an orthonormal basis for <math|W<rsub|j>>.
+
+      <item>The functions <math|<around*|{|D<rsup|j>T<rsub|k>\<psi\>|}><rsub|j,k\<in\>\<bbb-Z\>>>
+      form an orthonormal basis for <math|L<rsup|2><around*|(|\<bbb-R\>|)>>,
+      i.e., <math|\<psi\>> is a wavelet.
+
+      <item>The functions <math|<around*|{|T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>\<cup\><around*|{|D<rsup|j>T<rsub|k>\<psi\>|}><rsub|j\<in\>\<bbb-N\>,k\<in\>\<bbb-Z\>>>
+      form an orthonormal basis for <math|L<rsup|2><around*|(|\<bbb-R\>|)>>.<htab|5mm>
+    </enumerate-roman>
+  </proposition>
+
+  Since function <math|\<psi\>> is a wavelet and function <math|\<phi\>>
+  generates the corresponding multiresolution analysis, it is important to
+  point out the relationship between the two functions. The following in this
+  section also shows the general method of constructing a multiresolution
+  analysis.
+
+  <\proposition>
+    <dueto|Scaling Function>Assume that the function
+    <math|\<phi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>> generates a
+    multiresolution analysis. Then there exists a 1-periodic function
+    <math|H<rsub|0>\<in\>L<rsup|2><around*|(|0,1|)>> such that
+
+    <\equation>
+      <wide|\<phi\>|^><around*|(|2\<gamma\>|)>=H<rsub|0><around*|(|\<gamma\>|)><wide|\<phi\>|^><around*|(|\<gamma\>|)><label|scalingEquation>
+    </equation>
+  </proposition>
+
+  Solution to Equation (<reference|scalingEquation>) is called a
+  <with|font-shape|italic|scaling function>, or said to be
+  <with|font-shape|italic|refinable>. Formulated in this language, a
+  necessary condition for a function <math|\<phi\>> to generate a
+  multiresolution analysis is that <math|\<phi\>> is a scaling function.
+  Later it will be shown that that condition is also sufficient.
 
   <section|An Elementary Way of Introducing Wavelet Theory>
 
@@ -407,7 +624,7 @@
 
 <\initial>
   <\collection>
-    <associate|info-flag|detailed>
+    <associate|info-flag|none>
   </collection>
 </initial>
 
@@ -477,44 +694,51 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|I|3>>
-    <associate|auto-10|<tuple|2.1.1|7>>
-    <associate|auto-11|<tuple|2.1.2|7>>
-    <associate|auto-12|<tuple|2.1.3|8>>
-    <associate|auto-13|<tuple|2.1.4|8>>
-    <associate|auto-14|<tuple|2.2|9>>
-    <associate|auto-15|<tuple|2.3|9>>
-    <associate|auto-16|<tuple|3|11>>
-    <associate|auto-17|<tuple|II|13>>
-    <associate|auto-18|<tuple|II|15>>
+    <associate|auto-10|<tuple|2|9>>
+    <associate|auto-11|<tuple|2.1|9>>
+    <associate|auto-12|<tuple|2.1.1|9>>
+    <associate|auto-13|<tuple|2.1.2|10>>
+    <associate|auto-14|<tuple|2.1.3|10>>
+    <associate|auto-15|<tuple|2.1.4|11>>
+    <associate|auto-16|<tuple|2.2|11>>
+    <associate|auto-17|<tuple|2.3|13>>
+    <associate|auto-18|<tuple|3|15>>
+    <associate|auto-19|<tuple|II|17>>
     <associate|auto-2|<tuple|1|5>>
+    <associate|auto-20|<tuple|II|?>>
     <associate|auto-3|<tuple|1.1|5>>
-    <associate|auto-4|<tuple|1.2|5>>
-    <associate|auto-5|<tuple|1.2.1|5>>
-    <associate|auto-6|<tuple|1.2.2|6>>
-    <associate|auto-7|<tuple|1.2.3|6>>
-    <associate|auto-8|<tuple|2|7>>
-    <associate|auto-9|<tuple|2.1|7>>
-    <associate|bib-WangJizeng2001|<tuple|1|15>>
-    <associate|bib-daubechies1992ten|<tuple|2|15>>
-    <associate|bib-williams1994introduction|<tuple|3|15>>
-    <associate|dilation|<tuple|1.2|6>>
-    <associate|expansion-pm|<tuple|1.7|6>>
-    <associate|footnote-1.1|<tuple|1.1|5>>
+    <associate|auto-4|<tuple|1.1.1|5>>
+    <associate|auto-5|<tuple|1.1.2|5>>
+    <associate|auto-6|<tuple|1.2|6>>
+    <associate|auto-7|<tuple|1.2.1|7>>
+    <associate|auto-8|<tuple|1.2.2|7>>
+    <associate|auto-9|<tuple|1.2.3|9>>
+    <associate|bib-WangJizeng2001|<tuple|1|17>>
+    <associate|bib-daubechies1992ten|<tuple|2|17>>
+    <associate|bib-williams1994introduction|<tuple|3|17>>
+    <associate|def:multiresolutionAnalysis|<tuple|1.4|?>>
+    <associate|dilation|<tuple|1.3|6>>
+    <associate|expansion-pm|<tuple|1.8|7>>
+    <associate|footnote-1.1|<tuple|1.1|6>>
     <associate|footnote-1.2|<tuple|1.2|6>>
-    <associate|footnote-2.1|<tuple|2.1|7>>
-    <associate|footnr-1.1|<tuple|1.1|5>>
+    <associate|footnote-2.1|<tuple|2.1|9>>
+    <associate|footnr-1.1|<tuple|1.1|6>>
     <associate|footnr-1.2|<tuple|1.2|6>>
-    <associate|footnr-2.1|<tuple|2.1|7>>
-    <associate|normal-cond|<tuple|2.1|7>>
-    <associate|orthogonal-cond|<tuple|2.2|8>>
-    <associate|pq-relationship|<tuple|1.8|6>>
-    <associate|vanishing-cond|<tuple|2.3|8>>
+    <associate|footnr-2.1|<tuple|2.1|9>>
+    <associate|lem:spaceVj|<tuple|1.5|?>>
+    <associate|normal-cond|<tuple|2.1|9>>
+    <associate|orthogonal-cond|<tuple|2.2|10>>
+    <associate|pq-relationship|<tuple|1.9|7>>
+    <associate|scalingEquation|<tuple|1.1|?>>
+    <associate|vanishing-cond|<tuple|2.3|10>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|bib>
+      christensen2010functions
+
       WangJizeng2001
 
       williams1994introduction
@@ -540,68 +764,76 @@
       Concepts of Wavelet Theory> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
-      1.1<space|2spc>A Functional Way of Introducing Wavelet Theory
+      1.1<space|2spc>An Abstract Way of Introducing Wavelet Theory
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-3>
 
-      1.2<space|2spc>An Elementary Way of Introducing Wavelet Theory
+      <with|par-left|<quote|1tab>|1.1.1<space|2spc>Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-4>
+      <no-break><pageref|auto-4>>
 
-      <with|par-left|<quote|1tab>|1.2.1<space|2spc>Scaling Function
+      <with|par-left|<quote|1tab>|1.1.2<space|2spc>Multiresolution Analysis
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-5>>
 
-      <with|par-left|<quote|1tab>|1.2.2<space|2spc>Wavelet
+      1.2<space|2spc>An Elementary Way of Introducing Wavelet Theory
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-6>>
+      <no-break><pageref|auto-6>
 
-      <with|par-left|<quote|1tab>|1.2.3<space|2spc>Example: Haar Wavelet
+      <with|par-left|<quote|1tab>|1.2.1<space|2spc>Scaling Function
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-7>>
 
+      <with|par-left|<quote|1tab>|1.2.2<space|2spc>Wavelet
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-8>>
+
+      <with|par-left|<quote|1tab>|1.2.3<space|2spc>Example: Haar Wavelet
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-9>>
+
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Construction
       and Properties of Wavelet System> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-8><vspace|0.5fn>
+      <no-break><pageref|auto-10><vspace|0.5fn>
 
       2.1<space|2spc>The Construction of Daubechies Wavelet System
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-9>
+      <no-break><pageref|auto-11>
 
       <with|par-left|<quote|1tab>|2.1.1<space|2spc>Quadrature Mirror Filters
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-10>>
+      <no-break><pageref|auto-12>>
 
       <with|par-left|<quote|1tab>|2.1.2<space|2spc>Derivation of Filter
       Coefficients <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-11>>
+      <no-break><pageref|auto-13>>
 
       <with|par-left|<quote|1tab>|2.1.3<space|2spc>Construction of Scaling
       Function <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-12>>
+      <no-break><pageref|auto-14>>
 
       <with|par-left|<quote|1tab>|2.1.4<space|2spc>Example: The Daubechies 4
       Coefficient Wavelet System <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-13>>
+      <no-break><pageref|auto-15>>
 
       2.2<space|2spc>Classification of Wavelet Bases
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-14>
+      <no-break><pageref|auto-16>
 
       2.3<space|2spc>Mallat Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-15>
+      <no-break><pageref|auto-17>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Wavelet
       Theory in Numerical Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-16><vspace|0.5fn>
+      <no-break><pageref|auto-18><vspace|0.5fn>
 
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II<space|2spc>Application
       of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-17><vspace|1fn>
+      <no-break><pageref|auto-19><vspace|1fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-18><vspace|0.5fn>
+      <no-break><pageref|auto-20><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
