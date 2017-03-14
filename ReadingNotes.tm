@@ -135,6 +135,23 @@
     </enumerate-roman>
   </lemma>
 
+  <\proof>
+    For <math|j\<in\>\<bbb-N\>>:
+
+    <\equation*>
+      V<rsub|j>=D<around*|(|V<rsub|j-1>|)>=D
+      D<around*|(|V<rsub|j-2>|)>=\<cdots\>=D<rsup|j><around*|(|V<rsub|0>|)>,
+    </equation*>
+
+    and for <math|j\<less\>0>, (i) holds similarly.
+
+    <\equation>
+      V<rsub|j>=D<rsup|j><around*|(|V<rsub|0>|)>=D<rsup|j><around*|(|<wide|span<around*|{|T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>|\<bar\>>|)>=<wide|span<around*|{|D<rsup|j>T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>|\<bar\>>.<label|Vj>
+    </equation>
+
+    \;
+  </proof>
+
   Lemma <reference|lem:spaceVj>(ii) shows that the space <math|V<rsub|j>> in
   a multiresolution analysis are uniquely determined by the function
   <math|\<phi\>>, so we say that the function <math|\<phi\>>
@@ -233,7 +250,133 @@
   <with|font-shape|italic|refinable>. Formulated in this language, a
   necessary condition for a function <math|\<phi\>> to generate a
   multiresolution analysis is that <math|\<phi\>> is a scaling function.
-  Later it will be shown that that condition is also sufficient.
+  Later it will be shown that that condition added up with two extra
+  conditions can become sufficient. The following theorem provides a concrete
+  statement on how to generate a wavelet with Equation
+  (<reference|scalingEquation>).
+
+  <\theorem>
+    <dueto|Wavelet Orthonormal Basis>Assume that
+    <math|\<phi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>> generates a
+    multiresolution analysis, and let <math|H<rsub|0>\<in\>L<rsup|2><around*|(|0,1|)>>
+    be a 1-periodic function satisfying the scaling equation
+    (<reference|scalingEquation>). Define the 1-periodic function
+    <math|H<rsub|1>> by
+
+    <\equation>
+      H<rsub|1>\<assign\><wide|H<rsub|0><around*|(|\<gamma\>+<frac|1|2>|)>|\<bar\>>\<mathe\><rsup|-2\<mathpi\>\<mathi\>\<gamma\>><label|h1>
+    </equation>
+
+    Also define the function <math|\<psi\>> via
+
+    <\equation>
+      <wide|\<psi\>|^><around*|(|2\<gamma\>|)>\<assign\>H<rsub|1><around*|(|\<gamma\>|)><wide|\<phi\>|^><around*|(|\<gamma\>|)>.<label|psiScaling>
+    </equation>
+
+    Then the following holds:
+
+    <\enumerate-roman>
+      <item><math|<around*|{|T<rsub|k>\<psi\>|}><rsub|k\<in\>\<bbb-Z\>>> is
+      an orthonormal basis for <math|W<rsub|0>>.
+
+      <item><math|<around*|{|D<rsup|j>T<rsub|k>\<psi\>|}><rsub|j,k\<in\>\<bbb-Z\>>>
+      is orthonormal basis for <math|L<rsup|2><around*|(|\<bbb-R\>|)>>, i.e.,
+      <math|\<psi\>> is a wavelet.
+    </enumerate-roman>
+  </theorem>
+
+  The direct way of defining the wavelet <math|\<psi\>> is applying inverse
+  Fourier transform on <math|<wide|\<psi\>|^><around*|(|\<gamma\>|)>>:
+
+  <\theorem>
+    <dueto|Explicit Expression for the Wavelet>Assume that
+    (<reference|psiScaling>) holds for a 1-periodic function
+    <math|H<rsub|1>\<in\>L<rsup|2><around*|(|0,1|)>>,
+
+    <\equation*>
+      H<rsub|1><around*|(|\<gamma\>|)>=<big|sum><rsub|k\<in\>\<bbb-Z\>>d<rsub|k>\<mathe\><rsup|2\<mathpi\>\<mathi\>k\<gamma\>>.
+    </equation*>
+
+    Then
+
+    <\equation>
+      \<psi\><around*|(|x|)>=<sqrt|2><big|sum><rsub|k\<in\>\<bbb-Z\>>d<rsub|k>D
+      T<rsub|-k>\<phi\><around*|(|x|)>=2<big|sum><rsub|k\<in\>\<bbb-Z\>>d<rsub|k>\<phi\><around*|(|2x+k|)><space|1em>x\<in\>\<bbb-R\>.<label|psiScalingExplicit>
+    </equation>
+  </theorem>
+
+  The Equation (<reference|psiScalingExplicit>) provides the method of
+  finding the wavelet <math|\<psi\>> whenever the function <math|H<rsub|0>>
+  has been calculated. In most cases of practical interest, <math|H<rsub|0>>
+  is actually a trigonometric polynomial:
+
+  <\equation*>
+    H<rsub|0><around*|(|\<gamma\>|)>=<big|sum><rsub|k=-N><rsup|N>c<rsub|k>\<mathe\><rsup|2\<mathpi\>\<mathi\>k\<gamma\>>.
+  </equation*>
+
+  The explicit expression of the wavelet in (<reference|psiScalingExplicit>)
+  immediately leads to a criterion for how to obtain a compactly supported
+  wavelet:
+
+  <\corollary>
+    <dueto|Compactly Supported Wavelet>Assume that the function
+    <math|\<phi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>> is compactly
+    supported and generates a multiresolution analysis. Assume further that
+    the function <math|H<rsub|0>> in the scaling equation
+    (<reference|scalingEquation>) is a trigonometric polynomial. Then the
+    wavelet <math|\<psi\> > in (<reference|psiScalingExplicit>) is compactly
+    supported.
+  </corollary>
+
+  <\example>
+    <dueto|Haar Wavelet>The previous conclusions can all be applied to the
+    case of Haar wavelet.
+  </example>
+
+  Since a multiresolution analysis is uniquely characterized by the scaling
+  function <math|\<phi\>>, it is natural to examine how to formulate the
+  multiresolution analysis conditions directly in terms of conditions on the
+  function <math|\<phi\>>. Such conditions are:
+
+  <\theorem>
+    <dueto|Construction of Multiresolution Analysis>Let
+    <math|\<phi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>>. Define the spaces
+    <math|V<rsub|j>> by (<reference|Vj>), and assume that the following
+    conditions holds:
+
+    <\enumerate-roman>
+      <item><math|inf<rsub|\<gamma\>\<in\><around*|(|-\<varepsilon\>,\<varepsilon\>|)>><around*|\||<wide|\<phi\>|^><around*|(|\<gamma\>|)>|\|>\<gtr\>0>
+      for some <math|\<varepsilon\>\<gtr\>0>;
+
+      <item>the scaling equation
+
+      <\equation*>
+        <wide|\<phi\>|^><around*|(|2\<gamma\>|)>=H<rsub|0><around*|(|\<gamma\>|)><wide|\<phi\>|^><around*|(|\<gamma\>|)>
+      </equation*>
+
+      is satisfied with a bounded 1-periodic function <math|H<rsub|0>>;
+
+      <item><math|<around*|{|T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>> form
+      an orthonormal system.
+    </enumerate-roman>
+  </theorem>
+
+  <\theorem>
+    <dueto|Characterization of Orthonormal System
+    <math|<around*|{|T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>>>Let
+    <math|\<phi\>\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>>. Then
+    <math|<around*|{|T<rsub|k>\<phi\>|}><rsub|k\<in\>\<bbb-Z\>>> is an
+    orthornormal system if and only if
+
+    <\equation*>
+      <big|sum><rsub|k\<in\>\<bbb-Z\>><around*|\||<wide|\<phi\>|^><around*|(|\<gamma\>+k|)>|\|><rsup|2>=1<space|1em>\<gamma\>\<in\>\<bbb-R\>
+    </equation*>
+  </theorem>
+
+  <subsection|Vanishing Moments and Daubechies' Wavelet>
+
+  This section mainly discusses the properties that make wavelet analysis
+  useful in signal processing.
 
   <section|An Elementary Way of Introducing Wavelet Theory>
 
@@ -624,7 +767,7 @@
 
 <\initial>
   <\collection>
-    <associate|info-flag|none>
+    <associate|info-flag|detailed>
   </collection>
 </initial>
 
@@ -693,43 +836,48 @@
 
 <\references>
   <\collection>
+    <associate|Vj|<tuple|1.1|?>>
     <associate|auto-1|<tuple|I|3>>
-    <associate|auto-10|<tuple|2|9>>
-    <associate|auto-11|<tuple|2.1|9>>
-    <associate|auto-12|<tuple|2.1.1|9>>
-    <associate|auto-13|<tuple|2.1.2|10>>
-    <associate|auto-14|<tuple|2.1.3|10>>
-    <associate|auto-15|<tuple|2.1.4|11>>
-    <associate|auto-16|<tuple|2.2|11>>
-    <associate|auto-17|<tuple|2.3|13>>
-    <associate|auto-18|<tuple|3|15>>
-    <associate|auto-19|<tuple|II|17>>
+    <associate|auto-10|<tuple|1.2.3|9>>
+    <associate|auto-11|<tuple|2|9>>
+    <associate|auto-12|<tuple|2.1|9>>
+    <associate|auto-13|<tuple|2.1.1|10>>
+    <associate|auto-14|<tuple|2.1.2|10>>
+    <associate|auto-15|<tuple|2.1.3|11>>
+    <associate|auto-16|<tuple|2.1.4|11>>
+    <associate|auto-17|<tuple|2.2|13>>
+    <associate|auto-18|<tuple|2.3|15>>
+    <associate|auto-19|<tuple|3|17>>
     <associate|auto-2|<tuple|1|5>>
     <associate|auto-20|<tuple|II|?>>
+    <associate|auto-21|<tuple|II|?>>
     <associate|auto-3|<tuple|1.1|5>>
     <associate|auto-4|<tuple|1.1.1|5>>
     <associate|auto-5|<tuple|1.1.2|5>>
-    <associate|auto-6|<tuple|1.2|6>>
-    <associate|auto-7|<tuple|1.2.1|7>>
-    <associate|auto-8|<tuple|1.2.2|7>>
-    <associate|auto-9|<tuple|1.2.3|9>>
+    <associate|auto-6|<tuple|1.1.3|6>>
+    <associate|auto-7|<tuple|1.2|7>>
+    <associate|auto-8|<tuple|1.2.1|7>>
+    <associate|auto-9|<tuple|1.2.2|9>>
     <associate|bib-WangJizeng2001|<tuple|1|17>>
     <associate|bib-daubechies1992ten|<tuple|2|17>>
     <associate|bib-williams1994introduction|<tuple|3|17>>
     <associate|def:multiresolutionAnalysis|<tuple|1.4|?>>
-    <associate|dilation|<tuple|1.3|6>>
-    <associate|expansion-pm|<tuple|1.8|7>>
+    <associate|dilation|<tuple|1.7|6>>
+    <associate|expansion-pm|<tuple|1.12|7>>
     <associate|footnote-1.1|<tuple|1.1|6>>
     <associate|footnote-1.2|<tuple|1.2|6>>
     <associate|footnote-2.1|<tuple|2.1|9>>
     <associate|footnr-1.1|<tuple|1.1|6>>
     <associate|footnr-1.2|<tuple|1.2|6>>
     <associate|footnr-2.1|<tuple|2.1|9>>
+    <associate|h1|<tuple|1.3|?>>
     <associate|lem:spaceVj|<tuple|1.5|?>>
     <associate|normal-cond|<tuple|2.1|9>>
     <associate|orthogonal-cond|<tuple|2.2|10>>
-    <associate|pq-relationship|<tuple|1.9|7>>
-    <associate|scalingEquation|<tuple|1.1|?>>
+    <associate|pq-relationship|<tuple|1.13|7>>
+    <associate|psiScaling|<tuple|1.4|?>>
+    <associate|psiScalingExplicit|<tuple|1.5|?>>
+    <associate|scalingEquation|<tuple|1.2|?>>
     <associate|vanishing-cond|<tuple|2.3|10>>
   </collection>
 </references>
