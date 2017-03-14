@@ -1,4 +1,4 @@
-<TeXmacs|1.99.5>
+<TeXmacs|1.99.4>
 
 <style|<tuple|book|mathematica>>
 
@@ -738,14 +738,91 @@
 
   <section|Classification of Wavelet Bases>
 
+  There are many families of orthogonal wavelets that have been constructed
+  in <math|L<rsup|2><around*|(|\<bbb-R\>|)>>. We can classify them with the
+  following criteria: localization in physical space (owing to their fast
+  decay or even compact support<cite|schneider2010wavelet>), localization in
+  frequency space (owing to their vanishing moments and
+  smoothness<cite|schneider2010wavelet>), continuity, and differentiablity.
+
   <section|Mallat Transform>
+
+  The Mallat Transform provides a simple means of transforming data from one
+  level of resolution <math|m> to the next coarser level of resolution
+  <math|m-1>. The inverse Mallat transform is a transform from the coarser
+  level <math|m-1> back to the finer level <math|m>.
+
+  <subsection|Multiresolution Decomposition>
+
+  As is mentioned before, the multiresolution decomposition consists of two
+  parts:
+
+  <\enumerate-numeric>
+    <item>the expansion coefficients <math|c<rsub|m-1,k>> of the
+    approximation <math|P<rsub|m-1>f>,
+
+    <item>the expansion coefficients <math|d<rsub|m-1,k>> of the detail
+    component <math|Q<rsub|m-1>f.>
+  </enumerate-numeric>
+
+  Consider a function <math|f>:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|P<rsub|m>f>|<cell|=>|<cell|<big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>c<rsub|m,k>\<phi\><rsub|m,k><around*|(|x|)><space|1em>c<rsub|m,k>=<around*|\<langle\>|f,\<nospace\>\<phi\><rsub|m,k>|\<rangle\>>>>|<row|<cell|Q<rsub|m>f>|<cell|=>|<cell|<big|sum><rsub|k=-\<infty\>><rsup|+\<infty\>>d<rsub|m,k>\<psi\><rsub|m,k><around*|(|x|)><space|1em>d<rsub|m,k>=<around*|\<langle\>|f,\<psi\><rsub|m,k>|\<rangle\>>>>|<row|<cell|P<rsub|m-1>f>|<cell|=>|<cell|P<rsub|m>f-Q<rsub|m-1>f.>>>>
+  </eqnarray*>
+
+  Substituting the above in
+
+  <\equation*>
+    c<rsub|m-1,k>=<around*|\<langle\>|P<rsub|m-1>f,\<phi\><rsub|m-1,k>|\<rangle\>>
+  </equation*>
+
+  leads to the following result
+
+  <\equation>
+    c<rsub|m-1,k>=<frac|1|<sqrt|2>><big|sum><rsub|j=-\<infty\>><rsup|+\<infty\>>c<rsub|m,j>a<rsub|j-2k><label|MallatTransC>.
+  </equation>
+
+  <\equation*>
+    \;
+  </equation*>
+
+  Similarly there is:
+
+  <\equation>
+    d<rsub|m-1,k>=<frac|1|<sqrt|2>><big|sum><rsub|j=-\<infty\>><rsup|+\<infty\>>c<rsub|m,j><around*|(|-1|)><rsup|<rsup|j>>a<rsub|N-1-j+2k><label|MallatTransD>.
+  </equation>
+
+  Equation (<reference|MallatTransC>, <reference|MallatTransD>) form the
+  basis of the Mallat transform algorithm.
+
+  <subsection|Multiresolution Reconstruction>
+
+  Multiresolution construction use <math|c<rsub|m-1,k>> and
+  <math|d<rsub|m-1,k>> to reconstruct <math|c<rsub|m,k>>. Considering the
+  following relationship:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|P<rsub|m>f>|<cell|=>|<cell|P<rsub|m-1>f+Q<rsub|m-1>f>>|<row|<cell|c<rsub|m,k>>|<cell|=>|<cell|<around*|\<langle\>|P<rsub|m>f,\<phi\><rsub|m,k>|\<rangle\>>>>>>
+  </eqnarray*>
+
+  leads to
+
+  <\equation>
+    c<rsub|m,k>=<frac|1|<sqrt|2>><big|sum><rsub|j=-\<infty\>><rsup|+\<infty\>>c<rsub|m-1,j>a<rsub|k-2j>+<frac|1|<sqrt|2>><big|sum><rsub|j=-\<infty\>><rsup|+\<infty\>>d<rsub|m-1,k><around*|(|-1|)><rsup|k>a<rsub|N-1-k+2j><label|InverseMallatTrans>.
+  </equation>
+
+  Equation (<reference|InverseMallatTrans>) forms the basis of the inverse
+  Mallat transform algorithm.
+
+  <subsection|The Mallat Transform and Inverse Transform Algorithm>
 
   <chapter|Wavelet Theory in Numerical Analysis>
 
   <part|Application of Wavelet Analysis in CFD>
 
   <\bibliography|bib|tm-plain|ReadingNotes.bib>
-    <\bib-list|3>
+    <\bib-list|4>
       <bibitem*|1><label|bib-WangJizeng2001>\<#738B\>\<#8BB0\>\<#589E\>.<newblock>
       <with|font-shape|italic|<with|font|uming|\<#6B63\>\<#4EA4\>\<#5C0F\>\<#6CE2\>\<#7EDF\>\<#4E00\>\<#7406\>\<#8BBA\>\<#4E0E\>\<#65B9\>\<#6CD5\>\<#53CA\>\<#5176\>\<#5728\>\<#538B\>\<#7535\>\<#667A\>\<#80FD\>\<#7ED3\>\<#6784\>\<#7B49\>\<#529B\>\<#5B66\>\<#7814\>\<#7A76\>\<#4E2D\>\<#7684\>\<#5E94\>\<#7528\>
       >[D]>.<newblock> <localize|PhD thesis>, 2001.<newblock>
@@ -754,7 +831,12 @@
       <with|font-shape|italic|Ten lectures on wavelets>.<newblock> SIAM,
       1992.<newblock>
 
-      <bibitem*|3><label|bib-williams1994introduction>John<nbsp>R
+      <bibitem*|3><label|bib-schneider2010wavelet>Kai Schneider<localize| and
+      >Oleg<nbsp>V Vasilyev.<newblock> Wavelet methods in computational fluid
+      dynamics.<newblock> <with|font-shape|italic|Annual Review of Fluid
+      Mechanics>, 42:473\U503, 2010.<newblock>
+
+      <bibitem*|4><label|bib-williams1994introduction>John<nbsp>R
       Williams<localize| and >Kevin Amaratunga.<newblock> Introduction to
       wavelets in engineering.<newblock> <with|font-shape|italic|International
       journal for numerical methods in engineering>, 37(14):2365\U2388,
@@ -774,12 +856,12 @@
 <\attachments>
   <\collection>
     <\associate|bib-bibliography>
-      <\db-entry|+a51wFmuIWkWSbg|phdthesis|WangJizeng2001>
+      <\db-entry|+cJ9jyZg8Q6HzUJ|phdthesis|WangJizeng2001>
         <db-field|contributor|jacob>
 
         <db-field|modus|imported>
 
-        <db-field|date|1488902180>
+        <db-field|date|1489210219>
       <|db-entry>
         <db-field|author|<name|<with|font|uming|\<#738B\>\<#8BB0\>\<#589E\>>>>
 
@@ -789,12 +871,12 @@
         <db-field|year|2001>
       </db-entry>
 
-      <\db-entry|+a51wFmuIWkWSbi|article|williams1994introduction>
+      <\db-entry|+cJ9jyZg8Q6HzUK|article|williams1994introduction>
         <db-field|contributor|jacob>
 
         <db-field|modus|imported>
 
-        <db-field|date|1488903442>
+        <db-field|date|1489210219>
       <|db-entry>
         <db-field|author|John R <name|Williams><name-sep>Kevin
         <name|Amaratunga>>
@@ -815,12 +897,12 @@
         <db-field|publisher|Wiley Online Library>
       </db-entry>
 
-      <\db-entry|+a51wFmuIWkWSbj|book|daubechies1992ten>
+      <\db-entry|+cJ9jyZg8Q6HzUL|book|daubechies1992ten>
         <db-field|contributor|jacob>
 
         <db-field|modus|imported>
 
-        <db-field|date|1488937952>
+        <db-field|date|1489210219>
       <|db-entry>
         <db-field|author|Ingrid <name|Daubechies>>
 
@@ -830,12 +912,36 @@
 
         <db-field|year|1992>
       </db-entry>
+
+      <\db-entry|+cJ9jyZg8Q6HzUI|article|schneider2010wavelet>
+        <db-field|contributor|jacob>
+
+        <db-field|modus|imported>
+
+        <db-field|date|1489210219>
+      <|db-entry>
+        <db-field|author|Kai <name|Schneider><name-sep>Oleg V
+        <name|Vasilyev>>
+
+        <db-field|title|Wavelet methods in computational fluid dynamics>
+
+        <db-field|journal|Annual Review of Fluid Mechanics>
+
+        <db-field|year|2010>
+
+        <db-field|volume|42>
+
+        <db-field|pages|473\U503>
+
+        <db-field|publisher|Annual Reviews>
+      </db-entry>
     </associate>
   </collection>
 </attachments>
 
 <\references>
   <\collection>
+<<<<<<< HEAD
     <associate|Vj|<tuple|1.1|?>>
     <associate|auto-1|<tuple|I|3>>
     <associate|auto-10|<tuple|1.2.3|9>>
@@ -848,10 +954,29 @@
     <associate|auto-17|<tuple|2.2|13>>
     <associate|auto-18|<tuple|2.3|15>>
     <associate|auto-19|<tuple|3|17>>
+=======
+    <associate|InverseMallatTrans|<tuple|2.6|?>>
+    <associate|MallatInversTrans|<tuple|2.5|?>>
+    <associate|MallatTrans|<tuple|2.4|?>>
+    <associate|MallatTransC|<tuple|2.4|?>>
+    <associate|MallatTransD|<tuple|2.5|?>>
+    <associate|auto-1|<tuple|I|3>>
+    <associate|auto-10|<tuple|2.1.1|7>>
+    <associate|auto-11|<tuple|2.1.2|7>>
+    <associate|auto-12|<tuple|2.1.3|8>>
+    <associate|auto-13|<tuple|2.1.4|8>>
+    <associate|auto-14|<tuple|2.2|9>>
+    <associate|auto-15|<tuple|2.3|9>>
+    <associate|auto-16|<tuple|2.3.1|11>>
+    <associate|auto-17|<tuple|2.3.2|13>>
+    <associate|auto-18|<tuple|2.3.3|15>>
+    <associate|auto-19|<tuple|3|?>>
+>>>>>>> b40bf0fa8b280652303da510fc623debfd7f3165
     <associate|auto-2|<tuple|1|5>>
     <associate|auto-20|<tuple|II|?>>
     <associate|auto-21|<tuple|II|?>>
     <associate|auto-3|<tuple|1.1|5>>
+<<<<<<< HEAD
     <associate|auto-4|<tuple|1.1.1|5>>
     <associate|auto-5|<tuple|1.1.2|5>>
     <associate|auto-6|<tuple|1.1.3|6>>
@@ -865,6 +990,21 @@
     <associate|dilation|<tuple|1.7|6>>
     <associate|expansion-pm|<tuple|1.12|7>>
     <associate|footnote-1.1|<tuple|1.1|6>>
+=======
+    <associate|auto-4|<tuple|1.2|5>>
+    <associate|auto-5|<tuple|1.2.1|5>>
+    <associate|auto-6|<tuple|1.2.2|6>>
+    <associate|auto-7|<tuple|1.2.3|6>>
+    <associate|auto-8|<tuple|2|7>>
+    <associate|auto-9|<tuple|2.1|7>>
+    <associate|bib-WangJizeng2001|<tuple|1|15>>
+    <associate|bib-daubechies1992ten|<tuple|2|15>>
+    <associate|bib-schneider2010wavelet|<tuple|3|?>>
+    <associate|bib-williams1994introduction|<tuple|4|15>>
+    <associate|dilation|<tuple|1.2|6>>
+    <associate|expansion-pm|<tuple|1.7|6>>
+    <associate|footnote-1.1|<tuple|1.1|5>>
+>>>>>>> b40bf0fa8b280652303da510fc623debfd7f3165
     <associate|footnote-1.2|<tuple|1.2|6>>
     <associate|footnote-2.1|<tuple|2.1|9>>
     <associate|footnr-1.1|<tuple|1.1|6>>
@@ -902,6 +1042,8 @@
       williams1994introduction
 
       williams1994introduction
+
+      schneider2010wavelet
     </associate>
     <\associate|toc>
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|I<space|2spc>Mathematical
