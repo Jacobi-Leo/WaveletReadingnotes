@@ -12,6 +12,37 @@
     College of Engineering, Peking University<samp|>
   </author-affiliation>>>>
 
+  <prologue>
+
+  The wavelet analysis is originated from Fourier analysis. The classical
+  Fourier transform
+
+  <\equation*>
+    <wide|f|^><around*|(|\<gamma\>|)>=<big|int><rsub|-\<infty\>><rsup|+\<infty\>>f<around*|(|x|)>\<mathe\><rsup|-2\<mathpi\>\<mathi\>\<gamma\>x>\<mathd\>x
+  </equation*>
+
+  converts information to the <with|font-shape|italic|frequency space>.
+  However, the Fourier transform is not localized in both physical space and
+  frequency space. One method of obtain local information on physical space
+  of a signal is the Fourier transform with a window function
+  <math|g<around*|(|t-b|)>>:
+
+  <\equation*>
+    <around*|(|G<rsub|a,b>f|)><around*|(|\<gamma\>|)>\<assign\><big|int><rsub|-\<infty\>><rsup|+\<infty\>>f<around*|(|t|)>e<rsup|-2\<mathpi\>\<mathi\>\<gamma\>x>g<rsub|a><around*|(|t-b|)>\<mathd\>t
+  </equation*>
+
+  where
+
+  <\equation*>
+    g<rsub|a><around*|(|t-b|)>\<assign\><frac|1|2<sqrt|\<mathpi\>a>>\<mathe\><rsup|-<frac|x<rsup|2>|4a>>.
+  </equation*>
+
+  The above transform is also called <with|font-shape|italic|Gabor
+  transform>. The shortcoming of Gabor transform is that it has only fixed
+  window, so it is not suitable for signals with singularity or severe
+  oscllation. Inspired by the above methods, wavelet analysis provides a
+  systematical tool of analyzing unstable signals.
+
   <part|Mathematical Fundations of Wavelet Analysis>
 
   <chapter|Basic<rigid|> Concepts of Wavelet Theory>
@@ -179,7 +210,7 @@
 
   In order to construct an orthonormal basis for
   <math|L<rsup|2><around*|(|\<bbb-R\>|)>> with multiresolution analysis, we
-  need to consider a class of vector space associated with
+  need to consider a class of vector space <math|W<rsub|j>> associated with
   {<math|V<rsub|j><around*|}|<rsub|j\<in\>\<bbb-Z\>>|\<nobracket\>>>:
 
   <\definition>
@@ -198,6 +229,12 @@
     <math|L<rsup|2><around*|(|\<bbb-R\>|)>> onto <math|W<rsub|j>> by
     <math|Q<rsub|j>>.
   </definition>
+
+  The above construction of space <math|W<rsub|j>> is very similar to
+  Gram-Schmidt process in finite-dimensional linear algebra. However, in
+  infinite-dimensional vector spaces, the Gram-Schmidt process does not make
+  sense in general. The multiresolution analysis provides a special condition
+  with which a process similar to Gram-Schmidt process is feasible.
 
   It turns out that the space <math|W<rsub|0>> plays a very special role in
   wavelet analysis. In fact, the next result shows that in order to obtain an
@@ -606,6 +643,8 @@
   and provides another way of defining (orthogonal) wavelet which is better
   for programming, but lacks mathematical rigorousness.
 
+  <subsection|Example: Haar Wavelet>
+
   <subsection|Scaling Function>
 
   The core part of wavelet analysis is the wavelet transform which is a tool
@@ -777,8 +816,6 @@
     <item>the expansion coefficients <math|d<rsub|m-1,k>> of the detail
     component <math|Q<rsub|m-1>f.>
   </enumerate-numeric>
-
-  <subsection|Example: Haar Wavelet>
 
   <chapter|Construction and Properties of Wavelet System>
 
@@ -1213,31 +1250,31 @@
     <associate|MallatTransC|<tuple|2.4|16>>
     <associate|MallatTransD|<tuple|2.5|16>>
     <associate|Vj|<tuple|1.1|6>>
-    <associate|auto-1|<tuple|I|3>>
-    <associate|auto-10|<tuple|1.2.3|12>>
-    <associate|auto-11|<tuple|2|13>>
-    <associate|auto-12|<tuple|2.1|13>>
-    <associate|auto-13|<tuple|2.1.1|13>>
-    <associate|auto-14|<tuple|2.1.2|13>>
-    <associate|auto-15|<tuple|2.1.3|14>>
-    <associate|auto-16|<tuple|2.1.4|15>>
-    <associate|auto-17|<tuple|2.2|15>>
-    <associate|auto-18|<tuple|2.3|15>>
-    <associate|auto-19|<tuple|2.3.1|16>>
-    <associate|auto-2|<tuple|1|5>>
-    <associate|auto-20|<tuple|2.3.2|16>>
-    <associate|auto-21|<tuple|2.3.3|16>>
-    <associate|auto-22|<tuple|3|17>>
-    <associate|auto-23|<tuple|II|19>>
+    <associate|auto-1|<tuple|?|3>>
+    <associate|auto-10|<tuple|1.2.2|12>>
+    <associate|auto-11|<tuple|1.2.3|13>>
+    <associate|auto-12|<tuple|2|13>>
+    <associate|auto-13|<tuple|2.1|13>>
+    <associate|auto-14|<tuple|2.1.1|13>>
+    <associate|auto-15|<tuple|2.1.2|14>>
+    <associate|auto-16|<tuple|2.1.3|15>>
+    <associate|auto-17|<tuple|2.1.4|15>>
+    <associate|auto-18|<tuple|2.2|15>>
+    <associate|auto-19|<tuple|2.3|16>>
+    <associate|auto-2|<tuple|I|5>>
+    <associate|auto-20|<tuple|2.3.1|16>>
+    <associate|auto-21|<tuple|2.3.2|16>>
+    <associate|auto-22|<tuple|2.3.3|17>>
+    <associate|auto-23|<tuple|3|19>>
     <associate|auto-24|<tuple|II|21>>
     <associate|auto-25|<tuple|II|?>>
-    <associate|auto-3|<tuple|1.1|5>>
-    <associate|auto-4|<tuple|1.1.1|5>>
-    <associate|auto-5|<tuple|1.1.2|5>>
-    <associate|auto-6|<tuple|1.1.3|8>>
-    <associate|auto-7|<tuple|1.2|10>>
-    <associate|auto-8|<tuple|1.2.1|11>>
-    <associate|auto-9|<tuple|1.2.2|12>>
+    <associate|auto-3|<tuple|1|5>>
+    <associate|auto-4|<tuple|1.1|5>>
+    <associate|auto-5|<tuple|1.1.1|5>>
+    <associate|auto-6|<tuple|1.1.2|8>>
+    <associate|auto-7|<tuple|1.1.3|10>>
+    <associate|auto-8|<tuple|1.2|11>>
+    <associate|auto-9|<tuple|1.2.1|12>>
     <associate|basicEstimate|<tuple|1.8|9>>
     <associate|bib-WangJizeng2001|<tuple|1|21>>
     <associate|bib-christensen2010functions|<tuple|2|21>>
@@ -1314,100 +1351,104 @@
       schneider2010wavelet
     </associate>
     <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Prologue>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
+
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|I<space|2spc>Mathematical
       Fundations of Wavelet Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-1><vspace|1fn>
+      <no-break><pageref|auto-2><vspace|1fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Basic<rigid|>
       Concepts of Wavelet Theory> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-2><vspace|0.5fn>
+      <no-break><pageref|auto-3><vspace|0.5fn>
 
       1.1<space|2spc>An Abstract Way of Introducing Wavelet Theory
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-3>
+      <no-break><pageref|auto-4>
 
       <with|par-left|<quote|1tab>|1.1.1<space|2spc>Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-4>>
+      <no-break><pageref|auto-5>>
 
       <with|par-left|<quote|1tab>|1.1.2<space|2spc>Multiresolution Analysis
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-5>>
+      <no-break><pageref|auto-6>>
 
       <with|par-left|<quote|1tab>|1.1.3<space|2spc>Vanishing Moments and
       Daubechies' Wavelet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-6>>
+      <no-break><pageref|auto-7>>
 
       1.2<space|2spc>An Elementary Way of Introducing Wavelet Theory
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-7>
+      <no-break><pageref|auto-8>
 
-      <with|par-left|<quote|1tab>|1.2.1<space|2spc>Scaling Function
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-8>>
-
-      <with|par-left|<quote|1tab>|1.2.2<space|2spc>Wavelet
+      <with|par-left|<quote|1tab>|1.2.1<space|2spc>Example: Haar Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-9>>
 
-      <with|par-left|<quote|1tab>|1.2.3<space|2spc>Example: Haar Wavelet
+      <with|par-left|<quote|1tab>|1.2.2<space|2spc>Scaling Function
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-10>>
 
+      <with|par-left|<quote|1tab>|1.2.3<space|2spc>Wavelet
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-11>>
+
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Construction
       and Properties of Wavelet System> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-11><vspace|0.5fn>
+      <no-break><pageref|auto-12><vspace|0.5fn>
 
       2.1<space|2spc>The Construction of Daubechies Wavelet System
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-12>
+      <no-break><pageref|auto-13>
 
       <with|par-left|<quote|1tab>|2.1.1<space|2spc>Quadrature Mirror Filters
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-13>>
+      <no-break><pageref|auto-14>>
 
       <with|par-left|<quote|1tab>|2.1.2<space|2spc>Derivation of Filter
       Coefficients <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-14>>
+      <no-break><pageref|auto-15>>
 
       <with|par-left|<quote|1tab>|2.1.3<space|2spc>Construction of Scaling
       Function <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-15>>
+      <no-break><pageref|auto-16>>
 
       <with|par-left|<quote|1tab>|2.1.4<space|2spc>Example: The Daubechies 4
       Coefficient Wavelet System <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-16>>
+      <no-break><pageref|auto-17>>
 
       2.2<space|2spc>Classification of Wavelet Bases
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-17>
+      <no-break><pageref|auto-18>
 
       2.3<space|2spc>Mallat Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-18>
+      <no-break><pageref|auto-19>
 
       <with|par-left|<quote|1tab>|2.3.1<space|2spc>Multiresolution
       Decomposition <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-19>>
+      <no-break><pageref|auto-20>>
 
       <with|par-left|<quote|1tab>|2.3.2<space|2spc>Multiresolution
       Reconstruction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-20>>
+      <no-break><pageref|auto-21>>
 
       <with|par-left|<quote|1tab>|2.3.3<space|2spc>The Mallat Transform and
       Inverse Transform Algorithm <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-21>>
+      <no-break><pageref|auto-22>>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Wavelet
       Theory in Numerical Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-22><vspace|0.5fn>
+      <no-break><pageref|auto-23><vspace|0.5fn>
 
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II<space|2spc>Application
       of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-23><vspace|1fn>
+      <no-break><pageref|auto-24><vspace|1fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-24><vspace|0.5fn>
+      <no-break><pageref|auto-25><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
