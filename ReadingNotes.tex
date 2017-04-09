@@ -46,17 +46,18 @@
 
 The concept of wavelet is originated from Fourier analysis. The classical
 Fourier transform
-\[ \hat{f} (\gamma) = \int_{- \infty}^{+ \infty} f (x) \mathe^{- 2 \mathpi
-   \mathi \gamma x} \mathd x \]
+\begin{equation}
+  \hat{f} (\gamma) = \int_{- \infty}^{+ \infty} f (x) \mathe^{- 2 \mathpi
+  \mathi \gamma x} \mathd x \label{FourierTrans}
+\end{equation}
 converts information to the \tmtextit{frequency space}. However, the Fourier
 transform is not localized in both physical space and frequency space. One
 method of obtain local information on physical space of a signal is the
-Fourier transform with a window function $g (t - b)$:
+Fourier transform with a windowed function $g (t - b)$:
 \[ (G_{a, b} f) (\gamma) \assign \int_{- \infty}^{+ \infty} f (t) e^{- 2
    \mathpi \mathi \gamma x} g_a (t - b) \mathd t \]
 where
-\[ g_a (t - b) \assign \frac{1}{2 \sqrt{\mathpi a}} \mathe^{- \frac{x^2}{4 a}}
-   . \]
+\[ g_a (x) \assign \mathe^{- 2 \mathpi a x^2} . \]
 The above transform is also called \tmtextit{Gabor transform}. The shortcoming
 of Gabor transform is that it has only fixed window, so it is not suitable for
 signals with singularity or severe oscillation. Inspired by the above methods,
@@ -537,7 +538,7 @@ factorization} to find the trigonometric polynomial $L$ satisfying
   \ref{eg:haarMRA}.
 \end{example}
 
-\section{An Elementary Way of Introducing Wavelet Theory}
+\section{An Elementary Way of Introducing Wavelet}
 
 This section is mainly according to
 {\cite{WangJizeng2001,williams1994introduction}}, and provides another way of
@@ -591,7 +592,7 @@ where $f^1$ is the same type of function as $f^0$ but with stepwidth twice as
 large.
 
 \begin{figure}[h]
-  \resizebox{540px}{604px}{\includegraphics{HaarWavelet.png}}
+  \resizebox{540px}{604px}{\includegraphics{Figures/HaarWavelet.png}}
   \caption{\label{fig:blowup}(upper) A function $f$ with support $[- 2^{J_1},
   2^{J_1}]$, piecewise constant on the $[\ell 2^{- J_0}, (\ell + 1) 2^{- J_0})
   .$ (lower) A blowup of a portion of $f$.}
@@ -606,7 +607,7 @@ Here $f^{J_0 + J_1}$ consists of two constant pieces (see Figure
 \ref{fig:haarWavelet2}).
 
 \begin{figure}[h]
-  \resizebox{278px}{202px}{\includegraphics{HaarWavelet2.png}}
+  \resizebox{278px}{202px}{\includegraphics{Figures/HaarWavelet2.png}}
   \caption{\label{fig:haarWavelet2}Extending interval $[- 2^{J_1}, 2^{J_1}]$
   to $[- 2^{J_1 + 1}, 2^{J_1 + 1}]$.}
 \end{figure}
@@ -750,8 +751,8 @@ follows. If we have the expansion coefficients $c_{m, k}$ in equation
   \item the expansion coefficients $d_{m - 1, k}$ of the detail component
   $Q_{m - 1} f.$
 \end{enumeratenumeric}
-
-\chapter{Construction and Properties of Wavelet System}
+\chapter{Construction and Properties of Wavelet
+System}\label{chap:ConstructionWaveletSystem}
 
 This chapter is mainly according to {\cite{williams1994introduction}}.
 
@@ -1047,9 +1048,241 @@ and
 \[ g = \frac{1}{\sqrt{2}} [a_{N - 1}, - a_{N - 2}, a_{N - 3}, - a_{N - 4},
    \ldots, a_1, - a_0, \ldots, 0, 0]^{\Tau} \]
 
+\subsection{Notes on Wavelet Transform Algorithm}
+
+In practice {\cite{williams1994introduction}}, the scaling function
+decomposition does not usually need to be carried out since, at the finest
+scale, the scaling function approaches the delta function, i.e.
+\[ \phi_{m, k} (x) \rightarrow 2^{m / 2} \delta (2^m x - k) \quad \tmop{as} m
+   \rightarrow \infty, \]
+and this is the basis for a discrete sampling of $f (x)$. The projection of
+$f$ onto the space of delta function is
+\begin{equation}
+  P_m f (x) = \sum_{k = - \infty}^{+ \infty} f_k 2^m \delta (2^m x - k)_{}
+  \label{expansiondelta-pm}
+\end{equation}
+where
+\[ f_k = f (2^{- m} k) . \]
+A comparision between equation (\ref{expansion-pm}) and
+(\ref{expansiondelta-pm}) leads to
+\[ c_{m, k} \approx 2^m f_k = 2^m f (2^{- m} k) \quad \tmop{as} m \tmop{is}
+   \tmop{very} \tmop{large} . \]
+But if $m$ is not large enough, the sampling process described above may
+introduce extra error in which case the integral according to definition of
+$c_{m, k}$ is required.
+
 \chapter{Wavelet in Numerical Analysis}
 
 \section{Some Useful Orthogonal Wavelets}
+
+\subsection{Meyer Wavelet}
+
+The Mayer Wavelet is defined by the following formula according to
+{\cite{frohlich1993adaptive}}, {\cite{daubechies1992ten}}, and
+{\cite{vermehren2015close}}\footnote{The formula given in appendix of
+{\cite{frohlich1993adaptive}} is not correct.},
+\[ \hat{\phi} (\xi) = \left\{ \begin{array}{ll}
+     1 & ; | \xi | \leqslant \frac{1}{3}\\
+     \cos \left( \frac{\mathpi}{2} \nu (3 | \xi | - 1) \right) & ; \frac{1}{3}
+     \leqslant | \xi | \leqslant \frac{2}{3}\\
+     0 & ; \tmop{elsewhere}
+   \end{array} \right. \]
+and
+\[ \hat{\psi} (\xi) = \left\{ \begin{array}{ll}
+     \mathe^{\mathi \mathpi \xi} \cos \left( \frac{\mathpi}{2} \nu (- 3 | \xi
+     | + 2) \right) & ; \frac{1}{3} \leqslant | \xi | \leqslant \frac{2}{3}\\
+     \mathe^{\mathi \mathpi \xi} \cos \left( \frac{\mathpi}{2} \nu \left(
+     \frac{3}{2} | \xi | - 1 \right) \right) & ; \frac{2}{3} \leqslant | \xi |
+     \leqslant \frac{4}{3}\\
+     0 & ; \tmop{elsewhere}
+   \end{array} \right. . \]
+\begin{figure}[h]
+  \resizebox{424px}{240px}{\includegraphics{Figures/Spectrum_Meyer_scalefunction.png}}
+  \caption{\label{fig:MeyerScalingSpectrum}The Meyer scaling function in
+  frequency space, it should be pointed out that the definition of Fourier
+  transform in the figure is different from Equation (\ref{FourierTrans}) in
+  Prologue, and the relation is $\Phi_{\tmop{meyer}} (\xi) = \hat{\phi} (2 \pi
+  \xi) / \sqrt{2 \mathpi}$.}
+\end{figure}
+
+\begin{figure}[h]
+  \resizebox{526px}{206px}{\includegraphics{Figures/Spectrum_Meyer_wavelet.png}}
+  \caption{\label{fig:MeyerWaveletSpectrum}The Meyer wavelet function in
+  frequency space, it should be pointed out that the definition of Fourier
+  transform in the figure is different from Equation (\ref{FourierTrans}) in
+  Prologue, and the relation is $\Psi_{\tmop{meyer}} (\xi) = \hat{\psi} (2 \pi
+  \xi) / \sqrt{2 \mathpi}$.}
+\end{figure}
+
+For the smooth ``step function'' $\nu$, two properties are required:
+\[ \nu (x) = \left\{ \begin{array}{ll}
+     0 & ; x \leqslant 0\\
+     1 & ; x \geqslant 1
+   \end{array} \right. \quad \tmop{and} \quad \nu (x) + \nu (1 - x) = 1, \]
+and the choice given by {\cite{daubechies1992ten}} with best localisation in
+physical domain is
+\[ \nu (x) = x^4 (35 - 84 x + 70 x^2 - 20 x^3) \quad 0 \leqslant x \leqslant
+   1, \]
+leading to the 3rd order of Mayer wavelet as the exponential index in term $-
+20 x^3$ is $3$. If the zeroth order of Mayer wavelet is chosen:
+\[ \nu (x) = \left\{ \begin{array}{ll}
+     0 & ; x < 0\\
+     x & ; 0 < x < 1\\
+     1 & ; x > 1
+   \end{array} \right., \]
+analytical expressions of scaling function and wavelet on time domain can be
+attained {\cite{vermehren2015close}}:
+\[ \phi (t) = \left\{ \begin{array}{ll}
+     \frac{2}{3} + \frac{4}{3 \mathpi} & ; t = 0\\
+     \frac{\sin \frac{2 \mathpi t}{3} + \frac{4}{3} t \cos \frac{4 \mathpi
+     t}{3}}{\mathpi t - \frac{16}{9} \mathpi t^3} & ; \tmop{elsewhere}
+   \end{array} \right. \]
+and
+\[ \psi (t) = \psi_1 (t) + \psi_2 (t) \]
+where
+\[ \psi_1 (t) = \frac{\frac{4}{3 \mathpi} (t - 0.5) \cos \left( \frac{2
+   \mathpi}{3} (t - 0.5) \right) - \frac{1}{\mathpi} \sin \left( \frac{4
+   \mathpi}{3} (t - 0.5) \right)}{(t - 0.5) - \frac{16}{9} (t - 0.5)^3} \]
+and
+\[ \psi_2 (t) = \frac{\frac{8}{3 \mathpi} (t - 0.5) \cos \left( \frac{8
+   \mathpi}{3} (t - 0.5) \right) + \frac{1}{\mathpi} \sin \left( \frac{4
+   \mathpi}{3} (t - 0.5) \right)}{(t - 0.5) - \frac{64}{9} (t - 0.5)^3} \]
+
+
+Mayer wavelet, as one of the most important orthogonal wavelets is constructed
+earlier than the invention of MRA. It is defined in \tmtextit{frequency space}
+and the purpose of this construction is to realize localization in frequency
+space (shown in Figure \ref{fig:MeyerScalingSpectrum} and
+\ref{fig:MeyerWaveletSpectrum}). The 3rd order Meyer wavelet system in time
+domain is sketched in Figure \ref{fig:MeyerPhi} and \ref{fig:MeyerPsi}.
+
+\begin{figure}[h]
+  \includegraphics{Figures/MeyerWavetletPhi.pdf}
+  \caption{\label{fig:MeyerPhi}Scaling function of Meyer wavelet}
+\end{figure}
+
+\begin{figure}[h]
+  \includegraphics{Figures/MeyerWavetletPsi.pdf}
+  \caption{\label{fig:MeyerPsi}Meyer wavelet function}
+\end{figure}
+
+\
+
+\subsection{Shannon Wavelet}
+
+The Shanonn wavelet is very similar to Meyer wavelet while it is also defined
+on frequency space with normalised gate function. As a result, it has very
+simple analytical expression (though poor convergence property):
+\[ \phi (t) = \tmop{sinc} (t) = \frac{\sin \mathpi t}{\mathpi t} \]
+and
+\[ \psi (t) = \tmop{sinc} \left( \frac{t}{2} \right) \cdot \cos \left( \frac{3
+   \mathpi t}{2} \right) = 2 \cdot \tmop{sinc} (2 t - 1) - \tmop{sinc} (t) .
+\]
+There is also complex continuous Shanno wavelet:
+\[ \psi^{(C \tmop{Sha})} (t) = \tmop{sinc} (t) \cdot \mathe^{- 2 \mathpi
+   \mathi t} \]
+\begin{figure}[h]
+  \includegraphics{Figures/ShannonWaveletPhi.pdf}
+  \caption{\label{fig:ShanonnPhi}sinc function}
+\end{figure}
+
+\begin{figure}[h]
+  \includegraphics{Figures/ShannonWaveletPsi.pdf}
+  \caption{\label{fig:ShanonnPsi}Shanonn wavelet (real)}
+\end{figure}
+
+\subsection{Daubechies Wavelet}
+
+The construction of Daubechies wavelet has been discussed in great detail in
+Chapter \ref{chap:ConstructionWaveletSystem}. The difference between different
+orders of Daubechies wavelet are quite large, so they are sketched out in
+detail. D1 means the first order\footnote{The order of Daubechies wavelet is
+defined as the order of its vanishming moment.} of Daubechies wavelet, i.e.
+Haar wavelet, D2 means the second order of Daubechies wavelet, and so on.
+
+\begin{figure}[h]
+  \includegraphics{Figures/D2WaveletPhi.pdf}
+  
+  \includegraphics{Figures/D2WaveletPsi.pdf}
+  \caption{The scaling function (upper) and wavelet function (lower) of D2}
+\end{figure}
+
+\
+
+\begin{figure}[h]
+  \includegraphics{Figures/D4WaveletPhi.pdf}
+  
+  \includegraphics{Figures/D4WaveletPsi.pdf}
+  \caption{The scaling function (upper) and wavelet function (lower) of D4}
+\end{figure}
+
+\
+
+\begin{figure}[h]
+  \includegraphics{Figures/D9WaveletPhi.pdf}
+  
+  \includegraphics{Figures/D9WaveletPsi.pdf}
+  \caption{The scaling function (upper) and wavelet function (lower) of D9}
+\end{figure}
+
+\subsection{Symlet Wavelet}
+
+\subsection{Coiflet Wavelet}
+
+\subsection{Battle-Lemari{\'e} Wavelet}
+
+Battle-Lemari{\'e} wavelet are wavelet in the form of
+\[ \psi (x) = \sum_{k \in \mathbbm{Z}} c_k N_m (2 x - k), \]
+while $N_m$ is the $m$th order of B-spline.
+
+\begin{figure}[h]
+  \includegraphics{Figures/BL1WaveletPhi.pdf}
+  
+  \includegraphics{Figures/BL1WaveletPsi.pdf}
+  \caption{The scaling function (upper) and wavelet function (lower) of 1st
+  order Battle-Lemari{\'e} wavelet.}
+\end{figure}
+
+\
+
+\begin{figure}[h]
+  \includegraphics{Figures/BL2WaveletPhi.pdf}
+  
+  \includegraphics{Figures/BL2WaveletPsi.pdf}
+  \caption{The scaling function (upper) and wavelet function (lower) of 2nd
+  order Battle-Lemari{\'e} wavelet.}
+\end{figure}
+
+\
+
+\begin{figure}[h]
+  \includegraphics{Figures/BL3WaveletPhi.pdf}
+  
+  \includegraphics{Figures/BL3WaveletPsi.pdf}
+  \caption{The scaling function (upper) and wavelet function (lower) of 3rd
+  order Battle-Lemari{\'e} wavelet.}
+\end{figure}
+
+\subsection{Biorthogonal spline Wavelet}
+
+\subsection{Reverse B-spline Wavelet}
+
+\
+
+
+\[ \  \]
+
+\section{Miscellaneous Staff}
+
+\subsection{Learning Resources}
+
+\begin{itemize}
+  \item All references are good reading materials, especially
+  {\cite{daubechies1992ten}}.
+  
+  \item Mathematica's \tmtextit{Wolfram Documentation} is the best material as
+  a starting point of learning how to apply wavelet.
+\end{itemize}
 
 \part{Application of Wavelet Analysis in CFD}
 
@@ -1066,9 +1299,75 @@ then it can be calculated that
 However we have also
 \[ H_0 (\gamma) = \frac{\hat{\phi} (2 \gamma)}{\hat{\phi} (\gamma)} =
    \mathe^{- 6 \mathpi^2 \gamma^2} \mathe^{- 2 \mathpi \mathi \gamma x_0} \]
-which is not 1-periodic: this violates theorem \ref{thm:constructionMRA}. So
-it is important to construct an orthogonal wavelet with Gaussian distriubtion
-as its scaling function.
+which is unfortunately not 1-periodic: this violates theorem
+\ref{thm:constructionMRA}. So it is imposible to construct an orthogonal
+wavelet with Gaussian distriubtion as its scaling function.
+
+However, it is still posible to construct a biorthogonal wavelet from wavelet
+frame generated by Gaussian distribution.
+
+\section{Approximation of Gaussian Distribution with Orthogonal Wavelets}
+
+In this section, a series of numerical test is carried out to compress the
+data representing a Gaussian distribution. The Gaussian distribution is
+modeled here as:
+\[ f (x) = \exp \left( - \frac{x^2}{2} \right) . \]
+Wavelet transform with four levels of refinement is applied on sampled data
+points, and a threshold of $\epsilon = 5 \times 10^{- 5}$ is applied to both
+the original data and the transformed data. The error caused by the
+compression is measured with a numerical integral by rectangle formula
+\[ \tmop{Err} = \frac{1}{10} \int_{- 5}^5 | f (x) - \tilde{f} (x) | \mathd x =
+   \frac{1}{10} \sum_n | f (x_n) - \tilde{f} (x_n) | \Delta x. \]
+The comparision is shown in table \ref{tab:compression01} and
+\ref{tab:compression02}.
+
+Two typical cases are examined. The sampling interval are both $[- 5, 5]$
+since $\mathe^{- 12.5} = 3.7 \times 10^{- 6}$ is small enough. In the first
+case, the sampling rate is one sample point per 0.1 unit of length; in the
+second case, the sampling rate is one sample point per 0.01 unit of length.
+Meyer wavelet and Shannon wavelet do not work well on compressing the
+data\footnote{The compression ratio is less than $2$ even in the second
+case.}, and the B-spline wavelet is the only one that performs good
+compressing ratio among all spline-based wavelets. The result of Haar wavelet
+is also provides for comparison.
+
+\begin{table}[h]
+  \begin{tabular}{p{2.4cm}p{2.4cm}p{2.4cm}p{2.4cm}p{2.4cm}}
+    \  & $N_{\tmop{ori}}$ & $N_{\tmop{trans}}$ & $\alpha$ & $\tmop{Err}$\\
+    Haar & 89 & 88 & 1.011 & $6.12 \times 10^{- 7}$\\
+    Daubechies 9 & 89 & 36 & 2.472 & $1.24 \times 10^{- 5}$\\
+    Coiflet 5 & 89 & 41 & 2.171 & $1.73 \times 10^{- 5}$\\
+    Symlet 10 & 89 & 39 & 2.282 & $1.04 \times 10^{- 5}$\\
+    B-spline 6 2 & 89 & 25 & 3.560 & $5.75 \times 10^{- 7}$
+  \end{tabular}
+  \caption{\label{tab:compression01}Case 1 where there is one sample point per
+  0.1 unit of length has totally 101 sampling points. $\alpha$ is compression
+  ration, $N_{\tmop{ori}}$ is the number of sampling points in original data
+  that is lager than the threshold, and $N_{\tmop{trans}}$ is the number of
+  data points in tranformed data that is lager than the threshold.}
+\end{table}
+
+\begin{table}[h]
+  \begin{tabular}{l}
+    \begin{tabular}{c}
+      \begin{tabular}{p{2.4cm}p{2.4cm}p{2.4cm}p{2.4cm}p{2.4cm}}
+        \  & $N_{\tmop{ori}}$ & $N_{\tmop{trans}}$ & $\alpha$ & $\tmop{Err}$\\
+        Haar & 891 & 760 & 1.172 & $4.60 \times 10^{- 7}$\\
+        Daubechies 8 & 891 & 59 & 15.10 & $4.58 \times 10^{- 7}$\\
+        Coiflet 5 & 891 & 59 & 15.10 & $4.43 \times 10^{- 7}$\\
+        Symlet 5 & 891 & 59 & 15.10 & $4.45 \times 10^{- 7}$\\
+        B-spline 4 2 & 891 & 59 & 15.10 & $3.68 \times 10^{- 7}$
+      \end{tabular}
+    \end{tabular}
+  \end{tabular}
+  \caption{\label{tab:compression02}\label{tab:compression02}Case 1 where
+  there is one sample point per 0.01 unit of length has totally 1001 sampling
+  points. One thing to mention is that Daubechies 5 has already reduce the
+  amout of meaningfu data to 60 samples. $\alpha$ is compression ration,
+  $N_{\tmop{ori}}$ is the number of sampling points in original data that is
+  lager than the threshold, and $N_{\tmop{trans}}$ is the number of data
+  points in tranformed data that is lager than the threshold.}
+\end{table}
 
 \begin{thebibliography}{1}
   \bibitem[1]{WangJizeng2001}王记增.{\newblock}
@@ -1083,17 +1382,25 @@ as its scaling function.
   \bibitem[3]{daubechies1992ten}Ingrid Daubechies.{\newblock} \tmtextit{Ten
   lectures on wavelets}.{\newblock} SIAM, 1992.{\newblock}
   
-  \bibitem[4]{schneider2010wavelet}Kai Schneider  and  Oleg~V
+  \bibitem[4]{frohlich1993adaptive}Jochen Fr{\"o}hlich.{\newblock} An adaptive
+  wavelet galerkin algorithm for one and two dimensional flame
+  computations.{\newblock} 1993.{\newblock}
+  
+  \bibitem[5]{schneider2010wavelet}Kai Schneider  and  Oleg~V
   Vasilyev.{\newblock} Wavelet methods in computational fluid
   dynamics.{\newblock} \tmtextit{Annual Review of Fluid Mechanics},
   42:473--503, 2010.{\newblock}
   
-  \bibitem[5]{williams1994introduction}John~R Williams  and  Kevin
+  \bibitem[6]{vermehren2015close}V Vermehren  and  HM de~Oliveira.{\newblock}
+  Close expressions for meyer wavelet and scale function.{\newblock}
+  \tmtextit{ArXiv preprint arXiv:1502.00161}, 2015.{\newblock}
+  
+  \bibitem[7]{williams1994introduction}John~R Williams  and  Kevin
   Amaratunga.{\newblock} Introduction to wavelets in engineering.{\newblock}
   \tmtextit{International journal for numerical methods in engineering},
   37(14):2365--2388, 1994.{\newblock}
   
-  \bibitem[6]{walnut2013introduction}David~F Walnut.{\newblock} \tmtextit{An
+  \bibitem[8]{walnut2013introduction}David~F Walnut.{\newblock} \tmtextit{An
   introduction to wavelet analysis}.{\newblock} Springer Science \& Business
   Media, 2013.{\newblock}
 \end{thebibliography}
