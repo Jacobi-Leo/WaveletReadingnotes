@@ -1,6 +1,6 @@
 <TeXmacs|1.99.4>
 
-<style|<tuple|tmbook|mathematica>>
+<style|<tuple|book|mathematica>>
 
 <\body>
   <\hide-preamble>
@@ -16,8 +16,192 @@
 
   <doc-data|<doc-title|Wavelet Analysis and Its Application in
   CFD>|<doc-author|<author-data|<author-name|LIU Zeyu>|<\author-affiliation>
-    College of Engineering, Peking University<samp|>
+    College of Engineering, Peking University
   </author-affiliation>>>>
+
+  <\table-of-contents|toc>
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|Prologue>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-1><vspace|0.5fn>
+
+    <vspace*|2fn><with|font-series|bold|math-font-series|bold|font-size|1.19|I<space|2spc>Mathematical
+    Foundations of Wavelet Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-2><vspace|1fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|1<space|2spc>Basic<rigid|>
+    Concepts of Wavelet> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-3><vspace|0.5fn>
+
+    1.1<space|2spc>An Abstract Way of Introducing Discrete Wavelet Transform
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-4>
+
+    <with|par-left|1tab|1.1.1<space|2spc>Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-5>>
+
+    <with|par-left|1tab|1.1.2<space|2spc>Multiresolution Analysis
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-6>>
+
+    <with|par-left|1tab|1.1.3<space|2spc>Vanishing Moments and Daubechies'
+    Wavelet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-7>>
+
+    1.2<space|2spc>An Elementary Way of Introducing Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-8>
+
+    <with|par-left|1tab|1.2.1<space|2spc>Example: Haar Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-9>>
+
+    <with|par-left|1tab|1.2.2<space|2spc>Scaling Function
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-12>>
+
+    <with|par-left|1tab|1.2.3<space|2spc>Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-13>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|2<space|2spc>Construction
+    and Properties of Wavelet System> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-14><vspace|0.5fn>
+
+    2.1<space|2spc>The Construction of Daubechies Wavelet System
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-15>
+
+    <with|par-left|1tab|2.1.1<space|2spc>Quadrature Mirror Filters
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-16>>
+
+    <with|par-left|1tab|2.1.2<space|2spc>Derivation of Filter Coefficients
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-17>>
+
+    <with|par-left|1tab|2.1.3<space|2spc>Construction of Scaling Function
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-18>>
+
+    <with|par-left|1tab|2.1.4<space|2spc>Example: The Daubechies 4
+    Coefficient Wavelet System <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-19>>
+
+    2.2<space|2spc>Classification of Wavelet Bases
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-20>
+
+    2.3<space|2spc>Mallat Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-21>
+
+    <with|par-left|1tab|2.3.1<space|2spc>Multiresolution Decomposition
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-22>>
+
+    <with|par-left|1tab|2.3.2<space|2spc>Multiresolution Reconstruction
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-23>>
+
+    <with|par-left|1tab|2.3.3<space|2spc>The Mallat Transform and Inverse
+    Transform Algorithm <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-24>>
+
+    <with|par-left|1tab|2.3.4<space|2spc>Notes on Wavelet Transform Algorithm
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-25>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|3<space|2spc>Wavelet
+    in Numerical Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-26><vspace|0.5fn>
+
+    3.1<space|2spc>Some Useful Orthogonal Wavelets
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-27>
+
+    <with|par-left|1tab|3.1.1<space|2spc>Meyer Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-28>>
+
+    <with|par-left|1tab|3.1.2<space|2spc>Shannon Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-33>>
+
+    <with|par-left|1tab|3.1.3<space|2spc>Daubechies Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-36>>
+
+    <with|par-left|1tab|3.1.4<space|2spc>Symlet Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-40>>
+
+    <with|par-left|1tab|3.1.5<space|2spc>Coiflet Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-41>>
+
+    <with|par-left|1tab|3.1.6<space|2spc>Battle-Lemarié Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-42>>
+
+    <with|par-left|1tab|3.1.7<space|2spc>Biorthogonal spline Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-46>>
+
+    <with|par-left|1tab|3.1.8<space|2spc>Reverse B-spline Wavelet
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-47>>
+
+    3.2<space|2spc>Wavelet-Galerkin Method
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-48>
+
+    <with|par-left|1tab|3.2.1<space|2spc>General Galerkin Method
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-49>>
+
+    3.3<space|2spc>Wavelet-collocation Method
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-50>
+
+    3.4<space|2spc>Miscellaneous Staff <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-51>
+
+    <with|par-left|1tab|3.4.1<space|2spc>Learning Resources
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-52>>
+
+    <vspace*|2fn><with|font-series|bold|math-font-series|bold|font-size|1.19|II<space|2spc>Application
+    of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-53><vspace|1fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>Wavelet
+    Direct Numerical Simulation> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-54><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>LES
+    Based on Wavelet> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-55><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|6<space|2spc>Wavelet
+    UGKS> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-56><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|7<space|2spc>Miscellaneous
+    Staff> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-57><vspace|0.5fn>
+
+    7.1<space|2spc>Orthogonal Wavelet with Gaussian Distribution as Scaling
+    Function? <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-58>
+
+    7.2<space|2spc>Approximation of Gaussian Distribution with Orthogonal
+    Wavelets <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-59>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|Bibliography>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-62><vspace|0.5fn>
+  </table-of-contents>
 
   <prologue>
 
@@ -61,7 +245,9 @@
   wavelet transform contains sufficient information to recover the signal
   <math|f<around*|(|t|)>>, so discrete wavelet transform (DWT) can be well
   defined. This reading note is mainly on DWT, and the reading materials are
-  listed in bibliography.<part|Mathematical Foundations of Wavelet Analysis>
+  listed in bibliography.
+
+  <part|Mathematical Foundations of Wavelet Analysis>
 
   <chapter|Basic<rigid|> Concepts of Wavelet>
 
@@ -1053,7 +1239,7 @@
   <reference|vanishing-cond>). It should be pointed out that Equation
   (<reference|normal-cond> and <reference|orthogonal-cond>) are required by
   all orthogonal wavelet systems, while Equation (<reference|vanishing-cond>)
-  is specially required by Daubechies wavelets, and as a result, the
+  is required by Daubechies wavelets and its derivatives, and especially, the
   Daubechies wavelet has the highest order of vanishing moment among all
   wavelets compactly supported on the same interval.
 
@@ -1099,9 +1285,13 @@
 
   <subsection|Example: The Daubechies 4 Coefficient Wavelet System>
 
-  Here we demonstrate the construction of the so called D4 Wavelet. According
-  to equation (<reference|normal-cond>, <reference|orthogonal-cond>,
-  <reference|vanishing-cond>), we have
+  Here we demonstrate the construction of the so called D4 Wavelet. D4
+  wavelet have four non-zero filter coefficients
+  <math|<around*|{|a<rsub|0>,a<rsub|1>,a<rsub|2>,a<rsub|3>|}>>, so the order
+  <math|\<alpha\>> of vanishing moment is <math|\<alpha\>=N/2-1>=1.
+
+  According to equation (<reference|normal-cond>,
+  <reference|orthogonal-cond>, <reference|vanishing-cond>), we have
 
   <\eqnarray*>
     <tformat|<table|<row|<cell|a<rsub|0>+a<rsub|1>+a<rsub|2>+a<rsub|3>>|<cell|=>|<cell|2>>|<row|<cell|a<rsub|0><rsup|2>+a<rsub|1><rsup|2>+a<rsub|2><rsup|2>+a<rsub|3><rsup|2>>|<cell|=>|<cell|2>>|<row|<cell|a<rsub|0>-a<rsub|1>+a<rsub|2>-a<rsub|3>>|<cell|=>|<cell|0>>|<row|<cell|-a<rsub|1>+2a<rsub|2>-3a<rsub|3>>|<cell|=>|<cell|0>>>>
@@ -1457,8 +1647,8 @@
   in Chapter <reference|chap:ConstructionWaveletSystem>. The difference
   between different orders of Daubechies wavelet are quite large, so they are
   sketched out in detail. D1 means the first order<\footnote>
-    The order of Daubechies wavelet is defined as the order of its vanishming
-    moment.
+    The order of Daubechies wavelet is defined as the number of non-zero
+    filter coefficients.
   </footnote> of Daubechies wavelet, i.e. Haar wavelet, D2 means the second
   order of Daubechies wavelet, and so on.
 
@@ -1467,7 +1657,7 @@
 
     <image|Figures/D2WaveletPsi.pdf|1par|||>
   </big-figure|The scaling function (upper) and wavelet function (lower) of
-  D2>
+  D4>
 
   \;
 
@@ -1476,7 +1666,7 @@
 
     <image|Figures/D4WaveletPsi.pdf|1par|||>
   </big-figure|The scaling function (upper) and wavelet function (lower) of
-  D4>
+  D6>
 
   \;
 
@@ -1485,11 +1675,38 @@
 
     <image|Figures/D9WaveletPsi.pdf|1par|||>
   </big-figure|The scaling function (upper) and wavelet function (lower) of
-  D9>
+  D10>
 
   <subsection|Symlet Wavelet>
 
+  The construction of symlet is based on Daubechies wavelet aiming at better
+  symmetry.
+
   <subsection|Coiflet Wavelet>
+
+  The construction of Coilflet is based on Daubechies wavelet aiming at less
+  fluctuation. The Coilflet achieves the same order of vanishing moment with
+  a larger support than the original Daubechies wavelet. Besides Equation
+  (<reference|normal-cond>, <reference|orthogonal-cond>, and
+  <reference|vanishing-cond>), the scaling function is constrained by:
+
+  <\equation>
+    M<rsub|k>=\<delta\><rsub|0,k><label|scalingVanishing-cond><space|1em>k=0,1,\<ldots\>,2\<beta\>
+  </equation>
+
+  where <math|M<rsub|s>> is the <math|s>th order of scaling function:
+
+  <\equation*>
+    M<rsub|s>=<big|int><rsub|-\<infty\>><rsup|+\<infty\>>x<rsup|s>\<phi\><around*|(|x|)>\<mathd\>x
+    .
+  </equation*>
+
+  It can be deduced that the order <math|\<alpha\>> of vanishing moment and
+  the order <math|2\<beta\>> of scaling function moment satisfy:
+
+  <\equation*>
+    \<alpha\>=N/3-1<space|1em>\<beta\>=N/3
+  </equation*>
 
   <subsection|Battle-Lemarié Wavelet>
 
@@ -1531,13 +1748,31 @@
 
   <subsection|Reverse B-spline Wavelet>
 
-  \;
+  <section|Wavelet-Galerkin Method>
 
-  \;
+  <subsection|General Galerkin Method>
 
-  <\equation*>
-    \;
-  </equation*>
+  The Galerkin method is a class of very important numerical method widely
+  used. The basic concept of Galerkin method is expressed in this section.
+
+  Consider operator <math|L> on\ 
+
+  <subsection|Wavelet-Galerkin with Generalized Orthogonal Coiflet>
+
+  The generalized orthogonal coiflet (GOC) is defined by replacing Equation
+  (<reference|scalingVanishing-cond>) by
+
+  <\equation>
+    M<rsub|k>=<around*|(|M<rsub|1>|)><rsup|k><label|coiflet-cond><space|1em>k=0,1,2,\<ldots\>,2\<beta\>,
+  </equation>
+
+  and this actually increases the smoothness of both the scaling function and
+  wavelet function. By solving the linear system consists of Equation
+  (<reference|normal-cond>, <reference|orthogonal-cond>,
+  <reference|vanishing-cond>, and <reference|coiflet-cond>), the filter
+  coefficients can be calculated similar to the case of Daubechies wavelet.
+
+  <section|Wavelet-collocation Method>
 
   <section|Miscellaneous Staff>
 
@@ -1552,6 +1787,12 @@
   </itemize>
 
   <part|Application of Wavelet Analysis in CFD>
+
+  <chapter|Wavelet Direct Numerical Simulation>
+
+  <chapter|LES Based on Wavelet>
+
+  <chapter|Wavelet UGKS>
 
   <chapter|Miscellaneous Staff>
 
@@ -1806,6 +2047,22 @@
 <\attachments>
   <\collection>
     <\associate|bib-bibliography>
+      <\db-entry|+cJ9jyZg8Q6HzUL|book|daubechies1992ten>
+        <db-field|contributor|jacob>
+
+        <db-field|modus|imported>
+
+        <db-field|date|1489210219>
+      <|db-entry>
+        <db-field|author|Ingrid <name|Daubechies>>
+
+        <db-field|title|Ten lectures on wavelets>
+
+        <db-field|publisher|SIAM>
+
+        <db-field|year|1992>
+      </db-entry>
+
       <\db-entry|+SQhuTNDPWOs9qY|book|christensen2010functions>
         <db-field|contributor|jacob>
 
@@ -1860,22 +2117,6 @@
         <db-field|publisher|Springer Science & Business Media>
 
         <db-field|year|2013>
-      </db-entry>
-
-      <\db-entry|+cJ9jyZg8Q6HzUL|book|daubechies1992ten>
-        <db-field|contributor|jacob>
-
-        <db-field|modus|imported>
-
-        <db-field|date|1489210219>
-      <|db-entry>
-        <db-field|author|Ingrid <name|Daubechies>>
-
-        <db-field|title|Ten lectures on wavelets>
-
-        <db-field|publisher|SIAM>
-
-        <db-field|year|1992>
       </db-entry>
 
       <\db-entry|+cJ9jyZg8Q6HzUJ|phdthesis|WangJizeng2001>
@@ -1962,69 +2203,77 @@
 <\references>
   <\collection>
     <associate|ConstructionWaveletSystem|<tuple|2|?>>
-    <associate|FourierTrans|<tuple|1|3>>
-    <associate|InverseMallatTrans|<tuple|2.6|20>>
+    <associate|FourierTrans|<tuple|1|5>>
+    <associate|InverseMallatTrans|<tuple|2.6|22>>
     <associate|MallatInversTrans|<tuple|2.5|?>>
     <associate|MallatTrans|<tuple|2.4|?>>
-    <associate|MallatTransC|<tuple|2.4|20>>
-    <associate|MallatTransD|<tuple|2.5|20>>
-    <associate|Vj|<tuple|1.1|8>>
-    <associate|auto-1|<tuple|?|3>>
-    <associate|auto-10|<tuple|1.1|13>>
-    <associate|auto-11|<tuple|1.2|14>>
-    <associate|auto-12|<tuple|1.2.2|14>>
-    <associate|auto-13|<tuple|1.2.3|15>>
-    <associate|auto-14|<tuple|2|17>>
-    <associate|auto-15|<tuple|2.1|17>>
-    <associate|auto-16|<tuple|2.1.1|17>>
-    <associate|auto-17|<tuple|2.1.2|17>>
-    <associate|auto-18|<tuple|2.1.3|18>>
-    <associate|auto-19|<tuple|2.1.4|18>>
-    <associate|auto-2|<tuple|I|5>>
-    <associate|auto-20|<tuple|2.2|19>>
-    <associate|auto-21|<tuple|2.3|19>>
-    <associate|auto-22|<tuple|2.3.1|19>>
-    <associate|auto-23|<tuple|2.3.2|20>>
-    <associate|auto-24|<tuple|2.3.3|20>>
-    <associate|auto-25|<tuple|2.3.4|21>>
-    <associate|auto-26|<tuple|3|23>>
-    <associate|auto-27|<tuple|3.1|23>>
-    <associate|auto-28|<tuple|3.1.1|23>>
-    <associate|auto-29|<tuple|3.1|23>>
-    <associate|auto-3|<tuple|1|7>>
-    <associate|auto-30|<tuple|3.2|24>>
-    <associate|auto-31|<tuple|3.3|25>>
-    <associate|auto-32|<tuple|3.4|25>>
-    <associate|auto-33|<tuple|3.1.2|25>>
-    <associate|auto-34|<tuple|3.5|26>>
-    <associate|auto-35|<tuple|3.6|26>>
-    <associate|auto-36|<tuple|3.1.3|27>>
-    <associate|auto-37|<tuple|3.7|27>>
-    <associate|auto-38|<tuple|3.8|28>>
-    <associate|auto-39|<tuple|3.9|29>>
-    <associate|auto-4|<tuple|1.1|7>>
-    <associate|auto-40|<tuple|3.1.4|29>>
-    <associate|auto-41|<tuple|3.1.5|29>>
-    <associate|auto-42|<tuple|3.1.6|29>>
-    <associate|auto-43|<tuple|3.10|30>>
-    <associate|auto-44|<tuple|3.11|31>>
-    <associate|auto-45|<tuple|3.12|32>>
-    <associate|auto-46|<tuple|3.1.7|32>>
-    <associate|auto-47|<tuple|3.1.8|32>>
-    <associate|auto-48|<tuple|3.2|33>>
-    <associate|auto-49|<tuple|3.2.1|33>>
-    <associate|auto-5|<tuple|1.1.1|7>>
-    <associate|auto-50|<tuple|II|35>>
-    <associate|auto-51|<tuple|4|37>>
-    <associate|auto-52|<tuple|4.1|37>>
-    <associate|auto-53|<tuple|4.2|37>>
-    <associate|auto-54|<tuple|4.1|37>>
-    <associate|auto-55|<tuple|4.2|38>>
-    <associate|auto-56|<tuple|4.2|39>>
-    <associate|auto-6|<tuple|1.1.2|7>>
-    <associate|auto-7|<tuple|1.1.3|10>>
-    <associate|auto-8|<tuple|1.2|12>>
-    <associate|auto-9|<tuple|1.2.1|12>>
+    <associate|MallatTransC|<tuple|2.4|22>>
+    <associate|MallatTransD|<tuple|2.5|22>>
+    <associate|Vj|<tuple|1.1|10>>
+    <associate|auto-1|<tuple|?|5>>
+    <associate|auto-10|<tuple|1.1|15>>
+    <associate|auto-11|<tuple|1.2|16>>
+    <associate|auto-12|<tuple|1.2.2|16>>
+    <associate|auto-13|<tuple|1.2.3|17>>
+    <associate|auto-14|<tuple|2|19>>
+    <associate|auto-15|<tuple|2.1|19>>
+    <associate|auto-16|<tuple|2.1.1|19>>
+    <associate|auto-17|<tuple|2.1.2|19>>
+    <associate|auto-18|<tuple|2.1.3|20>>
+    <associate|auto-19|<tuple|2.1.4|20>>
+    <associate|auto-2|<tuple|I|7>>
+    <associate|auto-20|<tuple|2.2|21>>
+    <associate|auto-21|<tuple|2.3|21>>
+    <associate|auto-22|<tuple|2.3.1|21>>
+    <associate|auto-23|<tuple|2.3.2|22>>
+    <associate|auto-24|<tuple|2.3.3|22>>
+    <associate|auto-25|<tuple|2.3.4|23>>
+    <associate|auto-26|<tuple|3|25>>
+    <associate|auto-27|<tuple|3.1|25>>
+    <associate|auto-28|<tuple|3.1.1|25>>
+    <associate|auto-29|<tuple|3.1|25>>
+    <associate|auto-3|<tuple|1|9>>
+    <associate|auto-30|<tuple|3.2|26>>
+    <associate|auto-31|<tuple|3.3|27>>
+    <associate|auto-32|<tuple|3.4|27>>
+    <associate|auto-33|<tuple|3.1.2|27>>
+    <associate|auto-34|<tuple|3.5|28>>
+    <associate|auto-35|<tuple|3.6|28>>
+    <associate|auto-36|<tuple|3.1.3|29>>
+    <associate|auto-37|<tuple|3.7|29>>
+    <associate|auto-38|<tuple|3.8|30>>
+    <associate|auto-39|<tuple|3.9|31>>
+    <associate|auto-4|<tuple|1.1|9>>
+    <associate|auto-40|<tuple|3.1.4|31>>
+    <associate|auto-41|<tuple|3.1.5|31>>
+    <associate|auto-42|<tuple|3.1.6|32>>
+    <associate|auto-43|<tuple|3.10|33>>
+    <associate|auto-44|<tuple|3.11|34>>
+    <associate|auto-45|<tuple|3.12|35>>
+    <associate|auto-46|<tuple|3.1.7|35>>
+    <associate|auto-47|<tuple|3.1.8|35>>
+    <associate|auto-48|<tuple|3.2|35>>
+    <associate|auto-49|<tuple|3.2.1|35>>
+    <associate|auto-5|<tuple|1.1.1|9>>
+    <associate|auto-50|<tuple|3.2.2|36>>
+    <associate|auto-51|<tuple|3.3|36>>
+    <associate|auto-52|<tuple|3.4|36>>
+    <associate|auto-53|<tuple|3.4.1|36>>
+    <associate|auto-54|<tuple|II|37>>
+    <associate|auto-55|<tuple|4|39>>
+    <associate|auto-56|<tuple|5|41>>
+    <associate|auto-57|<tuple|6|43>>
+    <associate|auto-58|<tuple|7|45>>
+    <associate|auto-59|<tuple|7.1|45>>
+    <associate|auto-6|<tuple|1.1.2|9>>
+    <associate|auto-60|<tuple|7.2|45>>
+    <associate|auto-61|<tuple|7.1|46>>
+    <associate|auto-62|<tuple|7.2|46>>
+    <associate|auto-63|<tuple|7.2|47>>
+    <associate|auto-64|<tuple|7.2|51>>
+    <associate|auto-7|<tuple|1.1.3|12>>
+    <associate|auto-8|<tuple|1.2|14>>
+    <associate|auto-9|<tuple|1.2.1|14>>
     <associate|auto.2-1|<tuple|?|?|#2>>
     <associate|auto.3-1|<tuple|I|?|#3>>
     <associate|auto.4-1|<tuple|1|?|#4>>
@@ -2033,74 +2282,85 @@
     <associate|auto.7-1|<tuple|II|?|#7>>
     <associate|auto.8-1|<tuple|4|?|#8>>
     <associate|auto.9-1|<tuple|4|?|#9>>
-    <associate|basicEstimate|<tuple|1.8|11>>
-    <associate|bib-WangJizeng2001|<tuple|1|39>>
-    <associate|bib-christensen2010functions|<tuple|2|39>>
-    <associate|bib-daubechies1992ten|<tuple|3|39>>
-    <associate|bib-frohlich1993adaptive|<tuple|4|39>>
-    <associate|bib-schneider2010wavelet|<tuple|5|39>>
-    <associate|bib-vermehren2015close|<tuple|6|39>>
-    <associate|bib-walnut2013introduction|<tuple|8|39>>
-    <associate|bib-williams1994introduction|<tuple|7|39>>
-    <associate|chap:ConstructionWaveletSystem|<tuple|2|17>>
-    <associate|daubechiesL|<tuple|1.10|12>>
-    <associate|def:multiresolutionAnalysis|<tuple|1.4|7>>
-    <associate|dilation|<tuple|1.16|15>>
-    <associate|eg:haarMRA|<tuple|1.6|8>>
-    <associate|expansion-pm|<tuple|1.21|15>>
-    <associate|expansiondelta-pm|<tuple|2.7|21>>
-    <associate|fig:MeyerPhi|<tuple|3.3|25>>
-    <associate|fig:MeyerPsi|<tuple|3.4|25>>
-    <associate|fig:MeyerScalingSpectrum|<tuple|3.1|23>>
-    <associate|fig:MeyerWaveletSpectrum|<tuple|3.2|24>>
-    <associate|fig:ShanonnPhi|<tuple|3.5|26>>
-    <associate|fig:ShanonnPsi|<tuple|3.6|26>>
-    <associate|fig:blowup|<tuple|1.1|13>>
-    <associate|fig:haarWavelet2|<tuple|1.2|14>>
+    <associate|basicEstimate|<tuple|1.8|13>>
+    <associate|bib-WangJizeng2001|<tuple|1|47>>
+    <associate|bib-christensen2010functions|<tuple|2|47>>
+    <associate|bib-daubechies1992ten|<tuple|3|47>>
+    <associate|bib-frohlich1993adaptive|<tuple|4|47>>
+    <associate|bib-schneider2010wavelet|<tuple|5|47>>
+    <associate|bib-vermehren2015close|<tuple|6|47>>
+    <associate|bib-walnut2013introduction|<tuple|8|47>>
+    <associate|bib-williams1994introduction|<tuple|7|47>>
+    <associate|chap:ConstructionWaveletSystem|<tuple|2|19>>
+    <associate|coiflet-cond|<tuple|3.2|36>>
+    <associate|daubechiesL|<tuple|1.10|14>>
+    <associate|def:multiresolutionAnalysis|<tuple|1.4|10>>
+    <associate|dilation|<tuple|1.16|17>>
+    <associate|eg:haarMRA|<tuple|1.6|10>>
+    <associate|expansion-pm|<tuple|1.21|17>>
+    <associate|expansiondelta-pm|<tuple|2.7|23>>
+    <associate|fig:MeyerPhi|<tuple|3.3|27>>
+    <associate|fig:MeyerPsi|<tuple|3.4|27>>
+    <associate|fig:MeyerScalingSpectrum|<tuple|3.1|25>>
+    <associate|fig:MeyerWaveletSpectrum|<tuple|3.2|26>>
+    <associate|fig:ShanonnPhi|<tuple|3.5|28>>
+    <associate|fig:ShanonnPsi|<tuple|3.6|28>>
+    <associate|fig:blowup|<tuple|1.1|15>>
+    <associate|fig:haarWavelet2|<tuple|1.2|16>>
     <associate|footnote-1|<tuple|1|?>>
-    <associate|footnote-1.1|<tuple|1.1|15>>
-    <associate|footnote-1.2|<tuple|1.2|15>>
+    <associate|footnote-1.1|<tuple|1.1|17>>
+    <associate|footnote-1.2|<tuple|1.2|17>>
     <associate|footnote-2|<tuple|2|?>>
-    <associate|footnote-2.1|<tuple|2.1|17>>
-    <associate|footnote-3.1|<tuple|3.1|23>>
-    <associate|footnote-3.2|<tuple|3.2|27>>
-    <associate|footnote-4.1|<tuple|4.1|37>>
+    <associate|footnote-2.1|<tuple|2.1|19>>
+    <associate|footnote-3.1|<tuple|3.1|25>>
+    <associate|footnote-3.2|<tuple|3.2|29>>
+    <associate|footnote-4.1|<tuple|4.1|41>>
+    <associate|footnote-5.1|<tuple|5.1|?>>
+    <associate|footnote-6.1|<tuple|6.1|?>>
+    <associate|footnote-7.1|<tuple|7.1|45>>
     <associate|footnr-1|<tuple|1|?>>
-    <associate|footnr-1.1|<tuple|1.1|15>>
-    <associate|footnr-1.2|<tuple|1.2|15>>
+    <associate|footnr-1.1|<tuple|1.1|17>>
+    <associate|footnr-1.2|<tuple|1.2|17>>
     <associate|footnr-2|<tuple|2|?>>
-    <associate|footnr-2.1|<tuple|2.1|17>>
-    <associate|footnr-3.1|<tuple|3.1|23>>
-    <associate|footnr-3.2|<tuple|3.2|27>>
-    <associate|footnr-4.1|<tuple|4.1|37>>
-    <associate|h1|<tuple|1.3|9>>
-    <associate|haarWavelet|<tuple|1.2.1|12>>
-    <associate|lem:spaceVj|<tuple|1.5|8>>
-    <associate|normal-cond|<tuple|2.1|17>>
-    <associate|orthogonal-cond|<tuple|2.2|18>>
-    <associate|pq-relationship|<tuple|1.22|16>>
-    <associate|psiScaling|<tuple|1.4|9>>
-    <associate|psiScalingExplicit|<tuple|1.5|9>>
-    <associate|representation|<tuple|1.6|10>>
-    <associate|scalingEquation|<tuple|1.2|9>>
+    <associate|footnr-2.1|<tuple|2.1|19>>
+    <associate|footnr-3.1|<tuple|3.1|25>>
+    <associate|footnr-3.2|<tuple|3.2|29>>
+    <associate|footnr-4.1|<tuple|4.1|41>>
+    <associate|footnr-5.1|<tuple|5.1|?>>
+    <associate|footnr-6.1|<tuple|6.1|?>>
+    <associate|footnr-7.1|<tuple|7.1|45>>
+    <associate|h1|<tuple|1.3|11>>
+    <associate|haarWavelet|<tuple|1.2.1|14>>
+    <associate|lem:spaceVj|<tuple|1.5|10>>
+    <associate|normal-cond|<tuple|2.1|19>>
+    <associate|orthogonal-cond|<tuple|2.2|20>>
+    <associate|pq-relationship|<tuple|1.22|18>>
+    <associate|psiScaling|<tuple|1.4|11>>
+    <associate|psiScalingExplicit|<tuple|1.5|11>>
+    <associate|representation|<tuple|1.6|12>>
+    <associate|scalingEquation|<tuple|1.2|11>>
+    <associate|scalingMoment-cond|<tuple|3.1|?>>
+    <associate|scalingVanishing-cond|<tuple|3.1|32>>
     <associate|sec:EgHaarWavelet|<tuple|1.2.1|?>>
     <associate|sec:haarWavelet|<tuple|1.2.1|?>>
-    <associate|tab:compression01|<tuple|4.1|37>>
-    <associate|tab:compression02|<tuple|4.2|38>>
-    <associate|thm:constructionMRA|<tuple|1.14|10>>
-    <associate|thm:constructionWavelet|<tuple|1.10|9>>
+    <associate|tab:compression01|<tuple|7.1|46>>
+    <associate|tab:compression02|<tuple|7.2|46>>
+    <associate|thm:constructionMRA|<tuple|1.14|12>>
+    <associate|thm:constructionWavelet|<tuple|1.10|11>>
     <associate|thm:constructionWavlet|<tuple|1.10|?>>
-    <associate|thm:decay|<tuple|1.18|11>>
-    <associate|thm:vanishingMoment|<tuple|1.19|11>>
-    <associate|thresholdingCondition|<tuple|1.7|10>>
-    <associate|vanishing-cond|<tuple|2.3|18>>
-    <associate|vanishingMomentH|<tuple|1.9|11>>
+    <associate|thm:decay|<tuple|1.18|13>>
+    <associate|thm:vanishingMoment|<tuple|1.19|13>>
+    <associate|thresholdingCondition|<tuple|1.7|12>>
+    <associate|vanishing-cond|<tuple|2.3|20>>
+    <associate|vanishingMomentH|<tuple|1.9|13>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|bib>
+      daubechies1992ten
+
       christensen2010functions
 
       schneider2010wavelet
@@ -2177,13 +2437,13 @@
       <tuple|normal|Shanonn wavelet (real)|<pageref|auto-35>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of D2|<pageref|auto-37>>
+      of D4|<pageref|auto-37>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of D4|<pageref|auto-38>>
+      of D6|<pageref|auto-38>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of D9|<pageref|auto-39>>
+      of D10|<pageref|auto-39>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
       of 1st order Battle-Lemarié wavelet.|<pageref|auto-43>>
@@ -2201,7 +2461,7 @@
       <with|mode|<quote|math>|N<rsub|ori>> is the number of sampling points
       in original data that is lager than the threshold, and
       <with|mode|<quote|math>|N<rsub|trans>> is the number of data points in
-      tranformed data that is lager than the threshold.|<pageref|auto-54>>
+      tranformed data that is lager than the threshold.|<pageref|auto-61>>
 
       <tuple|normal|Case 1 where there is one sample point per 0.01 unit of
       length has totally 1001 sampling points. One thing to mention is that
@@ -2210,167 +2470,194 @@
       <with|mode|<quote|math>|N<rsub|ori>> is the number of sampling points
       in original data that is lager than the threshold, and
       <with|mode|<quote|math>|N<rsub|trans>> is the number of data points in
-      tranformed data that is lager than the threshold.|<pageref|auto-55>>
+      tranformed data that is lager than the threshold.|<pageref|auto-62>>
     </associate>
     <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-shape|<quote|small-caps>|Prologue>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Prologue>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-1><vspace|0.5fn>
+      <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|I.<space|2spc>Mathematical
+      <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|I<space|2spc>Mathematical
       Foundations of Wavelet Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|1fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-shape|<quote|small-caps>|1.<space|2spc>Basic<rigid|>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Basic<rigid|>
       Concepts of Wavelet> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-3><vspace|0.5fn>
+      <no-break><pageref|auto-3><vspace|0.5fn>
 
-      1.1.<space|2spc>An Abstract Way of Introducing Discrete Wavelet
+      1.1<space|2spc>An Abstract Way of Introducing Discrete Wavelet
       Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-4>
 
-      <with|par-left|<quote|1tab>|1.1.1.<space|2spc>Wavelet
+      <with|par-left|<quote|1tab>|1.1.1<space|2spc>Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-5>>
 
-      <with|par-left|<quote|1tab>|1.1.2.<space|2spc>Multiresolution Analysis
+      <with|par-left|<quote|1tab>|1.1.2<space|2spc>Multiresolution Analysis
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-6>>
 
-      <with|par-left|<quote|1tab>|1.1.3.<space|2spc>Vanishing Moments and
+      <with|par-left|<quote|1tab>|1.1.3<space|2spc>Vanishing Moments and
       Daubechies' Wavelet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-7>>
 
-      1.2.<space|2spc>An Elementary Way of Introducing Wavelet
+      1.2<space|2spc>An Elementary Way of Introducing Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-8>
 
-      <with|par-left|<quote|1tab>|1.2.1.<space|2spc>Example: Haar Wavelet
+      <with|par-left|<quote|1tab>|1.2.1<space|2spc>Example: Haar Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-9>>
 
-      <with|par-left|<quote|1tab>|1.2.2.<space|2spc>Scaling Function
+      <with|par-left|<quote|1tab>|1.2.2<space|2spc>Scaling Function
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-12>>
 
-      <with|par-left|<quote|1tab>|1.2.3.<space|2spc>Wavelet
+      <with|par-left|<quote|1tab>|1.2.3<space|2spc>Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-13>>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-shape|<quote|small-caps>|2.<space|2spc>Construction
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Construction
       and Properties of Wavelet System> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-14><vspace|0.5fn>
+      <no-break><pageref|auto-14><vspace|0.5fn>
 
-      2.1.<space|2spc>The Construction of Daubechies Wavelet System
+      2.1<space|2spc>The Construction of Daubechies Wavelet System
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-15>
 
-      <with|par-left|<quote|1tab>|2.1.1.<space|2spc>Quadrature Mirror Filters
+      <with|par-left|<quote|1tab>|2.1.1<space|2spc>Quadrature Mirror Filters
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-16>>
 
-      <with|par-left|<quote|1tab>|2.1.2.<space|2spc>Derivation of Filter
+      <with|par-left|<quote|1tab>|2.1.2<space|2spc>Derivation of Filter
       Coefficients <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-17>>
 
-      <with|par-left|<quote|1tab>|2.1.3.<space|2spc>Construction of Scaling
+      <with|par-left|<quote|1tab>|2.1.3<space|2spc>Construction of Scaling
       Function <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-18>>
 
-      <with|par-left|<quote|1tab>|2.1.4.<space|2spc>Example: The Daubechies 4
+      <with|par-left|<quote|1tab>|2.1.4<space|2spc>Example: The Daubechies 4
       Coefficient Wavelet System <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-19>>
 
-      2.2.<space|2spc>Classification of Wavelet Bases
+      2.2<space|2spc>Classification of Wavelet Bases
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-20>
 
-      2.3.<space|2spc>Mallat Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      2.3<space|2spc>Mallat Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-21>
 
-      <with|par-left|<quote|1tab>|2.3.1.<space|2spc>Multiresolution
+      <with|par-left|<quote|1tab>|2.3.1<space|2spc>Multiresolution
       Decomposition <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-22>>
 
-      <with|par-left|<quote|1tab>|2.3.2.<space|2spc>Multiresolution
+      <with|par-left|<quote|1tab>|2.3.2<space|2spc>Multiresolution
       Reconstruction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-23>>
 
-      <with|par-left|<quote|1tab>|2.3.3.<space|2spc>The Mallat Transform and
+      <with|par-left|<quote|1tab>|2.3.3<space|2spc>The Mallat Transform and
       Inverse Transform Algorithm <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-24>>
 
-      <with|par-left|<quote|1tab>|2.3.4.<space|2spc>Notes on Wavelet
-      Transform Algorithm <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <with|par-left|<quote|1tab>|2.3.4<space|2spc>Notes on Wavelet Transform
+      Algorithm <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-25>>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-shape|<quote|small-caps>|3.<space|2spc>Wavelet
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Wavelet
       in Numerical Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-26><vspace|0.5fn>
+      <no-break><pageref|auto-26><vspace|0.5fn>
 
-      3.1.<space|2spc>Some Useful Orthogonal Wavelets
+      3.1<space|2spc>Some Useful Orthogonal Wavelets
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-27>
 
-      <with|par-left|<quote|1tab>|3.1.1.<space|2spc>Meyer Wavelet
+      <with|par-left|<quote|1tab>|3.1.1<space|2spc>Meyer Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-28>>
 
-      <with|par-left|<quote|1tab>|3.1.2.<space|2spc>Shannon Wavelet
+      <with|par-left|<quote|1tab>|3.1.2<space|2spc>Shannon Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-33>>
 
-      <with|par-left|<quote|1tab>|3.1.3.<space|2spc>Daubechies Wavelet
+      <with|par-left|<quote|1tab>|3.1.3<space|2spc>Daubechies Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-36>>
 
-      <with|par-left|<quote|1tab>|3.1.4.<space|2spc>Symlet Wavelet
+      <with|par-left|<quote|1tab>|3.1.4<space|2spc>Symlet Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-40>>
 
-      <with|par-left|<quote|1tab>|3.1.5.<space|2spc>Coiflet Wavelet
+      <with|par-left|<quote|1tab>|3.1.5<space|2spc>Coiflet Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-41>>
 
-      <with|par-left|<quote|1tab>|3.1.6.<space|2spc>Battle-Lemarié Wavelet
+      <with|par-left|<quote|1tab>|3.1.6<space|2spc>Battle-Lemarié Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-42>>
 
-      <with|par-left|<quote|1tab>|3.1.7.<space|2spc>Biorthogonal spline
+      <with|par-left|<quote|1tab>|3.1.7<space|2spc>Biorthogonal spline
       Wavelet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-46>>
 
-      <with|par-left|<quote|1tab>|3.1.8.<space|2spc>Reverse B-spline Wavelet
+      <with|par-left|<quote|1tab>|3.1.8<space|2spc>Reverse B-spline Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-47>>
 
-      3.2.<space|2spc>Miscellaneous Staff
+      3.2<space|2spc>Wavelet-Galerkin Method
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-48>
 
-      <with|par-left|<quote|1tab>|3.2.1.<space|2spc>Learning Resources
+      <with|par-left|<quote|1tab>|3.2.1<space|2spc>General Galerkin Method
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-49>>
 
-      <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II.<space|2spc>Application
-      of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-50><vspace|1fn>
+      <with|par-left|<quote|1tab>|3.2.2<space|2spc>Wavelet-Galerkin with
+      Generalized Orthogonal Coiflet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-50>>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-shape|<quote|small-caps>|4.<space|2spc>Miscellaneous
-      Staff> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-51><vspace|0.5fn>
+      3.3<space|2spc>Wavelet-collocation Method
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-51>
 
-      4.1.<space|2spc>Orthogonal Wavelet with Gaussian Distribution as
-      Scaling Function? <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      3.4<space|2spc>Miscellaneous Staff <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-52>
 
-      4.2.<space|2spc>Approximation of Gaussian Distribution with Orthogonal
-      Wavelets <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-53>
-
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-shape|<quote|small-caps>|Bibliography>
+      <with|par-left|<quote|1tab>|3.4.1<space|2spc>Learning Resources
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <pageref|auto-56><vspace|0.5fn>
+      <no-break><pageref|auto-53>>
+
+      <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II<space|2spc>Application
+      of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-54><vspace|1fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Wavelet
+      Direct Numerical Simulation> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-55><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>LES
+      Based on Wavelet> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-56><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Wavelet
+      UGKS> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-57><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|7<space|2spc>Miscellaneous
+      Staff> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-58><vspace|0.5fn>
+
+      7.1<space|2spc>Orthogonal Wavelet with Gaussian Distribution as Scaling
+      Function? <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-59>
+
+      7.2<space|2spc>Approximation of Gaussian Distribution with Orthogonal
+      Wavelets <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-60>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-63><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
