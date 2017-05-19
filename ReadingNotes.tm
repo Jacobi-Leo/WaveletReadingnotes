@@ -159,48 +159,52 @@
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-49>>
 
+    <with|par-left|1tab|3.2.2<space|2spc>Wavelet-Galerkin with Generalized
+    Orthogonal Coiflet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-50>>
+
     3.3<space|2spc>Wavelet-collocation Method
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-50>
+    <no-break><pageref|auto-51>
 
     3.4<space|2spc>Miscellaneous Staff <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-51>
+    <no-break><pageref|auto-52>
 
     <with|par-left|1tab|3.4.1<space|2spc>Learning Resources
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-52>>
+    <no-break><pageref|auto-53>>
 
     <vspace*|2fn><with|font-series|bold|math-font-series|bold|font-size|1.19|II<space|2spc>Application
     of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-53><vspace|1fn>
+    <no-break><pageref|auto-54><vspace|1fn>
 
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>Wavelet
     Direct Numerical Simulation> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-54><vspace|0.5fn>
+    <no-break><pageref|auto-55><vspace|0.5fn>
 
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>LES
     Based on Wavelet> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-55><vspace|0.5fn>
+    <no-break><pageref|auto-56><vspace|0.5fn>
 
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|6<space|2spc>Wavelet
     UGKS> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-56><vspace|0.5fn>
+    <no-break><pageref|auto-57><vspace|0.5fn>
 
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|7<space|2spc>Miscellaneous
     Staff> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-57><vspace|0.5fn>
+    <no-break><pageref|auto-58><vspace|0.5fn>
 
     7.1<space|2spc>Orthogonal Wavelet with Gaussian Distribution as Scaling
     Function? <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-58>
+    <no-break><pageref|auto-59>
 
     7.2<space|2spc>Approximation of Gaussian Distribution with Orthogonal
     Wavelets <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-59>
+    <no-break><pageref|auto-60>
 
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|Bibliography>
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-62><vspace|0.5fn>
+    <no-break><pageref|auto-63><vspace|0.5fn>
   </table-of-contents>
 
   <prologue>
@@ -850,12 +854,13 @@
 
   <subsection|Example: Haar Wavelet>
 
-  <label|haarWavelet>This section is an demonstration on how to approximate
-  an arbitrary function <math|f> in <math|L<rsup|2><around*|(|\<bbb-R\>|)>>
-  by linear combination of Haar wavelet <cite|daubechies1992ten>. First, any
-  function <math|f\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>> can be arbitrarily
-  well approximated by a function with compact support which is piecewise
-  constant on the interval <math|<around*|[|\<ell\>2<rsup|-j>,<around*|(|\<ell\>+1|)>2<rsup|-j>|)>>
+  <label|sec:haarWavelet>This section is an demonstration on how to
+  approximate an arbitrary function <math|f> in
+  <math|L<rsup|2><around*|(|\<bbb-R\>|)>> by linear combination of Haar
+  wavelet <cite|daubechies1992ten>. First, any function
+  <math|f\<in\>L<rsup|2><around*|(|\<bbb-R\>|)>> can be arbitrarily well
+  approximated by a function with compact support which is piecewise constant
+  on the interval <math|<around*|[|\<ell\>2<rsup|-j>,<around*|(|\<ell\>+1|)>2<rsup|-j>|)>>
   (it suffices to take the support and <math|j> large enough). As a result,
   we consider the following piecewise constant function: assume <math|f> to
   be supported on <math|<around*|[|-2<rsup|J<rsub|1>>,2<rsup|J<rsub|1>>|]>>,
@@ -1757,7 +1762,7 @@
   The Galerkin method is a class of very important numerical method widely
   used. The basic concept of Galerkin method is expressed in this section.
 
-  Consider operator <math|L> on\ 
+  Consider operator <math|L> which defines a PDE
 
   <subsection|Wavelet-Galerkin with Generalized Orthogonal Coiflet>
 
@@ -1819,7 +1824,7 @@
     H<rsub|0><around*|(|\<gamma\>|)>=<frac|<wide|\<phi\>|^><around*|(|2\<gamma\>|)>|<wide|\<phi\>|^><around*|(|\<gamma\>|)>>=\<mathe\><rsup|-6\<mathpi\><rsup|2>\<gamma\><rsup|2>>\<mathe\><rsup|-2\<mathpi\>\<mathi\>\<gamma\>x<rsub|0>>
   </equation*>
 
-  which is unfortunately not 1-periodic: this violates theorem
+  which is unfortunately not 1-periodic: this violates Theorem
   <reference|thm:constructionMRA>. So it is imposible to construct an
   orthogonal wavelet with Gaussian distriubtion as its scaling function.
 
@@ -1927,7 +1932,7 @@
   the number of data points in tranformed data that is lager than the
   threshold.>
 
-  <big-table|<tabular|<tformat|<table|<row|<cell|<tabular*|<tformat|<table|<row|<cell|<tabular|<tformat|<cwith|1|-1|1|-1|cell-hyphen|t>|<twith|table-lborder|0.1>|<twith|table-rborder|0.1>|<twith|table-bborder|0.1>|<twith|table-tborder|0.1>|<table|<row|<\cell>
+  <\big-table|<tabular|<tformat|<table|<row|<cell|<tabular*|<tformat|<table|<row|<cell|<tabular|<tformat|<cwith|1|-1|1|-1|cell-hyphen|t>|<twith|table-lborder|0.1>|<twith|table-rborder|0.1>|<twith|table-bborder|0.1>|<twith|table-tborder|0.1>|<table|<row|<\cell>
     \;
   </cell>|<\cell>
     <math|N<rsub|ori>>
@@ -1987,14 +1992,15 @@
     15.10
   </cell>|<\cell>
     <math|3.68\<times\>10<rsup|-7>>
-  </cell>>>>>>>>>>>>>>>|<label|tab:compression02><label|tab:compression02>Case
-  1 where there is one sample point per 0.01 unit of length has totally 1001
-  sampling points. One thing to mention is that Daubechies 5 has already
-  reduce the amout of meaningfu data to 60 samples. <math|\<alpha\>> is
-  compression ration, <math|N<rsub|ori>> is the number of sampling points in
-  original data that is lager than the threshold, and <math|N<rsub|trans>> is
-  the number of data points in tranformed data that is lager than the
-  threshold.>
+  </cell>>>>>>>>>>>>>>>>
+    <label|tab:compression02>Case 1 where there is one sample point per 0.01
+    unit of length has totally 1001 sampling points. One thing to mention is
+    that Daubechies 5 has already reduce the amout of meaningfu data to 60
+    samples. <math|\<alpha\>> is compression ration, <math|N<rsub|ori>> is
+    the number of sampling points in original data that is lager than the
+    threshold, and <math|N<rsub|trans>> is the number of data points in
+    tranformed data that is lager than the threshold.
+  </big-table>
 
   <\bibliography|bib|tm-plain|ReadingNotes.bib>
     <\bib-list|8>
@@ -2423,38 +2429,38 @@
       <tuple|normal|The Meyer scaling function in frequency space, it should
       be pointed out that the definition of Fourier transform in the figure
       is different from Equation (<reference|FourierTrans>) in Prologue, and
-      the relation is <with|mode|<quote|math>|\<Phi\><rsub|meyer><around*|(|\<xi\>|)>=<wide|\<phi\>|^><around*|(|2\<pi\>\<xi\>|)>/<sqrt|2\<mathpi\>>>.|<pageref|auto-29>>
+      the relation is <with|mode|<quote|math>|\<Phi\><rsub|meyer><around*|(|\<xi\>|)>=<wide|\<phi\>|^><around*|(|2\<pi\>\<xi\>|)>/<sqrt|2\<mathpi\>>>.|<pageref|auto-30>>
 
       <tuple|normal|The Meyer wavelet function in frequency space, it should
       be pointed out that the definition of Fourier transform in the figure
       is different from Equation (<reference|FourierTrans>) in Prologue, and
-      the relation is <with|mode|<quote|math>|\<Psi\><rsub|meyer><around*|(|\<xi\>|)>=<wide|\<psi\>|^><around*|(|2\<pi\>\<xi\>|)>/<sqrt|2\<mathpi\>>>.|<pageref|auto-30>>
+      the relation is <with|mode|<quote|math>|\<Psi\><rsub|meyer><around*|(|\<xi\>|)>=<wide|\<psi\>|^><around*|(|2\<pi\>\<xi\>|)>/<sqrt|2\<mathpi\>>>.|<pageref|auto-31>>
 
-      <tuple|normal|Scaling function of Meyer wavelet|<pageref|auto-31>>
+      <tuple|normal|Scaling function of Meyer wavelet|<pageref|auto-32>>
 
-      <tuple|normal|Meyer wavelet function|<pageref|auto-32>>
+      <tuple|normal|Meyer wavelet function|<pageref|auto-33>>
 
-      <tuple|normal|sinc function|<pageref|auto-34>>
+      <tuple|normal|sinc function|<pageref|auto-35>>
 
-      <tuple|normal|Shanonn wavelet (real)|<pageref|auto-35>>
-
-      <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of D4|<pageref|auto-37>>
+      <tuple|normal|Shanonn wavelet (real)|<pageref|auto-36>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of D6|<pageref|auto-38>>
+      of D4|<pageref|auto-38>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of D10|<pageref|auto-39>>
+      of D6|<pageref|auto-39>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of 1st order Battle-Lemarié wavelet.|<pageref|auto-43>>
+      of D10|<pageref|auto-40>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of 2nd order Battle-Lemarié wavelet.|<pageref|auto-44>>
+      of 1st order Battle-Lemarié wavelet.|<pageref|auto-44>>
 
       <tuple|normal|The scaling function (upper) and wavelet function (lower)
-      of 3rd order Battle-Lemarié wavelet.|<pageref|auto-45>>
+      of 2nd order Battle-Lemarié wavelet.|<pageref|auto-45>>
+
+      <tuple|normal|The scaling function (upper) and wavelet function (lower)
+      of 3rd order Battle-Lemarié wavelet.|<pageref|auto-46>>
     </associate>
     <\associate|table>
       <tuple|normal|Case 1 where there is one sample point per 0.1 unit of
@@ -2463,16 +2469,18 @@
       <with|mode|<quote|math>|N<rsub|ori>> is the number of sampling points
       in original data that is lager than the threshold, and
       <with|mode|<quote|math>|N<rsub|trans>> is the number of data points in
-      tranformed data that is lager than the threshold.|<pageref|auto-61>>
-
-      <tuple|normal|Case 1 where there is one sample point per 0.01 unit of
-      length has totally 1001 sampling points. One thing to mention is that
-      Daubechies 5 has already reduce the amout of meaningfu data to 60
-      samples. <with|mode|<quote|math>|\<alpha\>> is compression ration,
-      <with|mode|<quote|math>|N<rsub|ori>> is the number of sampling points
-      in original data that is lager than the threshold, and
-      <with|mode|<quote|math>|N<rsub|trans>> is the number of data points in
       tranformed data that is lager than the threshold.|<pageref|auto-62>>
+
+      <\tuple|normal>
+        Case 1 where there is one sample point per 0.01 unit of length has
+        totally 1001 sampling points. One thing to mention is that Daubechies
+        5 has already reduce the amout of meaningfu data to 60 samples.
+        <with|mode|<quote|math>|\<alpha\>> is compression ration,
+        <with|mode|<quote|math>|N<rsub|ori>> is the number of sampling points
+        in original data that is lager than the threshold, and
+        <with|mode|<quote|math>|N<rsub|trans>> is the number of data points
+        in tranformed data that is lager than the threshold.
+      </tuple|<pageref|auto-63>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Prologue>
@@ -2519,147 +2527,151 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-13>>
 
+      1.3<space|2spc>Biorthogonal Wavelet
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-14>
+
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Construction
       and Properties of Wavelet System> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-14><vspace|0.5fn>
+      <no-break><pageref|auto-15><vspace|0.5fn>
 
       2.1<space|2spc>The Construction of Daubechies Wavelet System
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-15>
+      <no-break><pageref|auto-16>
 
       <with|par-left|<quote|1tab>|2.1.1<space|2spc>Quadrature Mirror Filters
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-16>>
+      <no-break><pageref|auto-17>>
 
       <with|par-left|<quote|1tab>|2.1.2<space|2spc>Derivation of Filter
       Coefficients <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-17>>
+      <no-break><pageref|auto-18>>
 
       <with|par-left|<quote|1tab>|2.1.3<space|2spc>Construction of Scaling
       Function <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-18>>
+      <no-break><pageref|auto-19>>
 
       <with|par-left|<quote|1tab>|2.1.4<space|2spc>Example: The Daubechies 4
       Coefficient Wavelet System <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-19>>
+      <no-break><pageref|auto-20>>
 
       2.2<space|2spc>Classification of Wavelet Bases
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-20>
+      <no-break><pageref|auto-21>
 
       2.3<space|2spc>Mallat Transform <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-21>
+      <no-break><pageref|auto-22>
 
       <with|par-left|<quote|1tab>|2.3.1<space|2spc>Multiresolution
       Decomposition <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-22>>
+      <no-break><pageref|auto-23>>
 
       <with|par-left|<quote|1tab>|2.3.2<space|2spc>Multiresolution
       Reconstruction <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-23>>
+      <no-break><pageref|auto-24>>
 
       <with|par-left|<quote|1tab>|2.3.3<space|2spc>The Mallat Transform and
       Inverse Transform Algorithm <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-24>>
+      <no-break><pageref|auto-25>>
 
       <with|par-left|<quote|1tab>|2.3.4<space|2spc>Notes on Wavelet Transform
       Algorithm <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-25>>
+      <no-break><pageref|auto-26>>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Wavelet
       in Numerical Analysis> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-26><vspace|0.5fn>
+      <no-break><pageref|auto-27><vspace|0.5fn>
 
       3.1<space|2spc>Some Useful Orthogonal Wavelets
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-27>
+      <no-break><pageref|auto-28>
 
       <with|par-left|<quote|1tab>|3.1.1<space|2spc>Meyer Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-28>>
+      <no-break><pageref|auto-29>>
 
       <with|par-left|<quote|1tab>|3.1.2<space|2spc>Shannon Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-33>>
+      <no-break><pageref|auto-34>>
 
       <with|par-left|<quote|1tab>|3.1.3<space|2spc>Daubechies Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-36>>
+      <no-break><pageref|auto-37>>
 
       <with|par-left|<quote|1tab>|3.1.4<space|2spc>Symlet Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-40>>
+      <no-break><pageref|auto-41>>
 
       <with|par-left|<quote|1tab>|3.1.5<space|2spc>Coiflet Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-41>>
+      <no-break><pageref|auto-42>>
 
       <with|par-left|<quote|1tab>|3.1.6<space|2spc>Battle-Lemarié Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-42>>
+      <no-break><pageref|auto-43>>
 
       <with|par-left|<quote|1tab>|3.1.7<space|2spc>Biorthogonal spline
       Wavelet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-46>>
+      <no-break><pageref|auto-47>>
 
       <with|par-left|<quote|1tab>|3.1.8<space|2spc>Reverse B-spline Wavelet
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-47>>
+      <no-break><pageref|auto-48>>
 
       3.2<space|2spc>Wavelet-Galerkin Method
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-48>
+      <no-break><pageref|auto-49>
 
       <with|par-left|<quote|1tab>|3.2.1<space|2spc>General Galerkin Method
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-49>>
+      <no-break><pageref|auto-50>>
 
       <with|par-left|<quote|1tab>|3.2.2<space|2spc>Wavelet-Galerkin with
       Generalized Orthogonal Coiflet <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-50>>
+      <no-break><pageref|auto-51>>
 
       3.3<space|2spc>Wavelet-collocation Method
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-51>
+      <no-break><pageref|auto-52>
 
       3.4<space|2spc>Miscellaneous Staff <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-52>
+      <no-break><pageref|auto-53>
 
       <with|par-left|<quote|1tab>|3.4.1<space|2spc>Learning Resources
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-53>>
+      <no-break><pageref|auto-54>>
 
       <vspace*|2fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|font-size|<quote|1.19>|II<space|2spc>Application
       of Wavelet Analysis in CFD> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-54><vspace|1fn>
+      <no-break><pageref|auto-55><vspace|1fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Wavelet
       Direct Numerical Simulation> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-55><vspace|0.5fn>
+      <no-break><pageref|auto-56><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>LES
       Based on Wavelet> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-56><vspace|0.5fn>
+      <no-break><pageref|auto-57><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Wavelet
       UGKS> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-57><vspace|0.5fn>
+      <no-break><pageref|auto-58><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|7<space|2spc>Miscellaneous
       Staff> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-58><vspace|0.5fn>
+      <no-break><pageref|auto-59><vspace|0.5fn>
 
       7.1<space|2spc>Orthogonal Wavelet with Gaussian Distribution as Scaling
       Function? <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-59>
+      <no-break><pageref|auto-60>
 
       7.2<space|2spc>Approximation of Gaussian Distribution with Orthogonal
       Wavelets <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-60>
+      <no-break><pageref|auto-61>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-63><vspace|0.5fn>
+      <no-break><pageref|auto-64><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
