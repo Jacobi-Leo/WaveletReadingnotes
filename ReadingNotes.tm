@@ -212,11 +212,11 @@
     <wide|f|^><around*|(|\<gamma\>|)>=<big|int><rsub|-\<infty\>><rsup|+\<infty\>>f<around*|(|x|)>\<mathe\><rsup|-2\<mathpi\>\<mathi\>\<gamma\>x>\<mathd\>x<label|FourierTrans>
   </equation>
 
-  converts information to the <with|font-shape|italic|frequency space>.
-  However, the Fourier transform is not localized in both physical space and
-  frequency space. One method of obtain local information on physical space
-  of a signal is the Fourier transform with a windowed function
-  <math|g<around*|(|t-b|)>>:
+  converts information from <with|font-shape|italic|physical space> to
+  <with|font-shape|italic|frequency space>. However, the Fourier transform is
+  not localized in both physical space and frequency space. One method of
+  obtaining local information of a signal on physical space is the Fourier
+  transform with a windowed function <math|g<around*|(|t-b|)>>:
 
   <\equation*>
     <around*|(|G<rsub|a,b>f|)><around*|(|\<gamma\>|)>\<assign\><big|int><rsub|-\<infty\>><rsup|+\<infty\>>f<around*|(|t|)>e<rsup|-2\<mathpi\>\<mathi\>\<gamma\>t>g<rsub|a><around*|(|t-b|)>\<mathd\>t
@@ -309,7 +309,7 @@
     </equation*>
   </example>
 
-  It is very complicated to verify that Haar function is wavelet, and it is
+  It is very complicated to verify that Haar function is a wavelet, and it is
   mentioned here just to point out the existence of wavelet, and an
   illustration on how Haar function forms a wavelet is in Section
   <reference|sec:haarWavelet>.
@@ -1140,6 +1140,8 @@
     <item>the expansion coefficients <math|d<rsub|m-1,k>> of the detail
     component <math|Q<rsub|m-1>f.>
   </enumerate-numeric>
+
+  <section|Biorthogonal Wavelet>
 
   <chapter|Construction and Properties of Wavelet
   System><label|chap:ConstructionWaveletSystem>
@@ -2215,60 +2217,60 @@
     <associate|auto-11|<tuple|1.2|16>>
     <associate|auto-12|<tuple|1.2.2|16>>
     <associate|auto-13|<tuple|1.2.3|17>>
-    <associate|auto-14|<tuple|2|19>>
-    <associate|auto-15|<tuple|2.1|19>>
-    <associate|auto-16|<tuple|2.1.1|19>>
-    <associate|auto-17|<tuple|2.1.2|19>>
-    <associate|auto-18|<tuple|2.1.3|20>>
-    <associate|auto-19|<tuple|2.1.4|20>>
+    <associate|auto-14|<tuple|1.3|19>>
+    <associate|auto-15|<tuple|2|19>>
+    <associate|auto-16|<tuple|2.1|19>>
+    <associate|auto-17|<tuple|2.1.1|19>>
+    <associate|auto-18|<tuple|2.1.2|20>>
+    <associate|auto-19|<tuple|2.1.3|20>>
     <associate|auto-2|<tuple|I|7>>
-    <associate|auto-20|<tuple|2.2|21>>
-    <associate|auto-21|<tuple|2.3|21>>
-    <associate|auto-22|<tuple|2.3.1|21>>
-    <associate|auto-23|<tuple|2.3.2|22>>
-    <associate|auto-24|<tuple|2.3.3|22>>
-    <associate|auto-25|<tuple|2.3.4|23>>
-    <associate|auto-26|<tuple|3|25>>
-    <associate|auto-27|<tuple|3.1|25>>
-    <associate|auto-28|<tuple|3.1.1|25>>
-    <associate|auto-29|<tuple|3.1|25>>
+    <associate|auto-20|<tuple|2.1.4|21>>
+    <associate|auto-21|<tuple|2.2|21>>
+    <associate|auto-22|<tuple|2.3|21>>
+    <associate|auto-23|<tuple|2.3.1|22>>
+    <associate|auto-24|<tuple|2.3.2|22>>
+    <associate|auto-25|<tuple|2.3.3|23>>
+    <associate|auto-26|<tuple|2.3.4|25>>
+    <associate|auto-27|<tuple|3|25>>
+    <associate|auto-28|<tuple|3.1|25>>
+    <associate|auto-29|<tuple|3.1.1|25>>
     <associate|auto-3|<tuple|1|9>>
-    <associate|auto-30|<tuple|3.2|26>>
-    <associate|auto-31|<tuple|3.3|27>>
-    <associate|auto-32|<tuple|3.4|27>>
-    <associate|auto-33|<tuple|3.1.2|27>>
-    <associate|auto-34|<tuple|3.5|28>>
-    <associate|auto-35|<tuple|3.6|28>>
-    <associate|auto-36|<tuple|3.1.3|29>>
-    <associate|auto-37|<tuple|3.7|29>>
-    <associate|auto-38|<tuple|3.8|30>>
-    <associate|auto-39|<tuple|3.9|31>>
+    <associate|auto-30|<tuple|3.1|26>>
+    <associate|auto-31|<tuple|3.2|27>>
+    <associate|auto-32|<tuple|3.3|27>>
+    <associate|auto-33|<tuple|3.4|27>>
+    <associate|auto-34|<tuple|3.1.2|28>>
+    <associate|auto-35|<tuple|3.5|28>>
+    <associate|auto-36|<tuple|3.6|29>>
+    <associate|auto-37|<tuple|3.1.3|29>>
+    <associate|auto-38|<tuple|3.7|30>>
+    <associate|auto-39|<tuple|3.8|31>>
     <associate|auto-4|<tuple|1.1|9>>
-    <associate|auto-40|<tuple|3.1.4|31>>
-    <associate|auto-41|<tuple|3.1.5|31>>
-    <associate|auto-42|<tuple|3.1.6|32>>
-    <associate|auto-43|<tuple|3.10|33>>
-    <associate|auto-44|<tuple|3.11|34>>
-    <associate|auto-45|<tuple|3.12|35>>
-    <associate|auto-46|<tuple|3.1.7|35>>
-    <associate|auto-47|<tuple|3.1.8|35>>
-    <associate|auto-48|<tuple|3.2|35>>
-    <associate|auto-49|<tuple|3.2.1|35>>
+    <associate|auto-40|<tuple|3.9|31>>
+    <associate|auto-41|<tuple|3.1.4|31>>
+    <associate|auto-42|<tuple|3.1.5|32>>
+    <associate|auto-43|<tuple|3.1.6|33>>
+    <associate|auto-44|<tuple|3.10|34>>
+    <associate|auto-45|<tuple|3.11|35>>
+    <associate|auto-46|<tuple|3.12|35>>
+    <associate|auto-47|<tuple|3.1.7|35>>
+    <associate|auto-48|<tuple|3.1.8|35>>
+    <associate|auto-49|<tuple|3.2|35>>
     <associate|auto-5|<tuple|1.1.1|9>>
-    <associate|auto-50|<tuple|3.2.2|36>>
-    <associate|auto-51|<tuple|3.3|36>>
-    <associate|auto-52|<tuple|3.4|36>>
-    <associate|auto-53|<tuple|3.4.1|36>>
-    <associate|auto-54|<tuple|II|37>>
-    <associate|auto-55|<tuple|4|39>>
-    <associate|auto-56|<tuple|5|41>>
-    <associate|auto-57|<tuple|6|43>>
-    <associate|auto-58|<tuple|7|45>>
-    <associate|auto-59|<tuple|7.1|45>>
+    <associate|auto-50|<tuple|3.2.1|36>>
+    <associate|auto-51|<tuple|3.2.2|36>>
+    <associate|auto-52|<tuple|3.3|36>>
+    <associate|auto-53|<tuple|3.4|36>>
+    <associate|auto-54|<tuple|3.4.1|37>>
+    <associate|auto-55|<tuple|II|39>>
+    <associate|auto-56|<tuple|4|41>>
+    <associate|auto-57|<tuple|5|43>>
+    <associate|auto-58|<tuple|6|45>>
+    <associate|auto-59|<tuple|7|45>>
     <associate|auto-6|<tuple|1.1.2|9>>
-    <associate|auto-60|<tuple|7.2|45>>
-    <associate|auto-61|<tuple|7.1|46>>
-    <associate|auto-62|<tuple|7.2|46>>
+    <associate|auto-60|<tuple|7.1|45>>
+    <associate|auto-61|<tuple|7.2|46>>
+    <associate|auto-62|<tuple|7.1|46>>
     <associate|auto-63|<tuple|7.2|47>>
     <associate|auto-64|<tuple|7.2|51>>
     <associate|auto-7|<tuple|1.1.3|12>>
