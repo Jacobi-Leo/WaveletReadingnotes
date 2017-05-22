@@ -254,7 +254,7 @@
   defined. This reading note is mainly on DWT, and the reading materials are
   listed in bibliography.
 
-  <part|Mathematical Foundations of Wavelet Analysis>
+  <part|Mathematical Foundations of Wavelet>
 
   <chapter|Basic<rigid|> Concepts of Wavelet>
 
@@ -1829,6 +1829,16 @@
   (<reference|normal-cond>, <reference|orthogonal-cond>,
   <reference|vanishing-cond>, and <reference|coiflet-cond>), the filter
   coefficients can be calculated similar to the case of Daubechies wavelet.
+
+  The filter coefficient of GOC can be obtained by solving the following
+  linear system:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<big|sum><rsub|k=0><rsup|N-1>a<rsub|k>>|<cell|=>|<cell|2>>|<row|<cell|<big|sum><rsub|k=0><rsup|N-1>a<rsub|k>
+    a<rsub|k-2i>>|<cell|=>|<cell|2\<delta\><rsub|0,i><space|1em>i\<in\><around*|{|0,1,\<ldots\>,N/2-1|}>>>|<row|<cell|<big|sum><rsub|k=0><rsup|N-1><around*|(|-1|)><rsup|k>
+    a<rsub|k> k<rsup|i>>|<cell|=>|<cell|0<space|1em>i\<in\><around*|{|0,1,\<ldots\>,\<alpha\>|}><space|1em>\<alpha\>=<frac|N|3>-1>>|<row|<cell|<big|sum><rsub|k=0><rsup|N-1>k<rsup|2i-1>
+    a<rsub|k>>|<cell|=>|<cell|2M<rsub|1><rsup|2i-1><space|1em>i\<in\><around*|{|1,2,\<ldots\>,\<beta\>|}><space|1em>\<beta\>=<frac|N|3>>>>>
+  </eqnarray*>
 
   <section|Wavelet-collocation Method>
 
